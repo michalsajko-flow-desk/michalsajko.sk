@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Michal Sajko — IT Konzultant & Workflow Automation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #ffffff;
+    --surface: #f7f8f9;
+    --border: #e8eaed;
+    --accent: #2d6a4f;
+    --accent-light: #eef5f1;
+    --accent-mid: #52976e;
+    --text: #0f1117;
+    --muted: #6b7280;
+    --muted-light: #9ca3af;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  nav.scrolled { border-color: var(--border); }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.875rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 400;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .nav-cta:hover { background: var(--accent-mid); transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 4rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 5px;
+    background: var(--accent);
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 6rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    display: block;
+    width: 32px; height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    margin-bottom: 1.75rem;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 46ch;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-primary:hover { background: var(--accent-mid); transform: translateY(-2px); }
+
+  .btn-ghost {
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    transition: color 0.2s;
+    font-weight: 400;
+  }
+  .btn-ghost:hover { color: var(--text); }
+  .btn-ghost svg { transition: transform 0.2s; }
+  .btn-ghost:hover svg { transform: translateX(3px); }
+
+  /* HERO CARD */
+  .hero-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+  }
+
+  .hero-card-top {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-avatar {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    border: 2px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .hero-card-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text);
+  }
+  .hero-card-role {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+
+  .hero-card-stat {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.82rem;
+  }
+  .hero-card-stat:last-of-type { border-bottom: none; }
+  .hero-card-stat-label { color: var(--muted); }
+  .hero-card-stat-val {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.82rem;
+  }
+  .hero-card-stat-val.green { color: var(--accent); }
+
+  .status-dot {
+    display: inline-block;
+    width: 7px; height: 7px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+    animation: pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 4rem;
+  }
+
+  /* SECTIONS */
+  .section { padding: 7rem 4rem; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-label::after {
+    content: '';
+    display: block;
+    width: 24px; height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text);
+    max-width: 22ch;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+    margin-top: 4rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.85;
+    font-weight: 300;
+  }
+
+  .about-text p + p { margin-top: 1.25rem; }
+  .about-text strong { color: var(--text); font-weight: 600; }
+
+  .credentials {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+
+  .credential-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .credential-item:hover { border-color: var(--accent); transform: translateX(4px); }
+
+  .credential-icon {
+    width: 36px; height: 36px;
+    background: var(--accent-light);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .credential-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+
+  .credential-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* FLOWDESK SERVICE */
+  .service-section { background: var(--surface); }
+
+  .service-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 4rem;
+    flex-wrap: wrap; gap: 2rem;
+  }
+
+  .service-intro {
+    max-width: 44ch;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-top: 1.5rem;
+  }
+
+  /* FLOW DIAGRAM */
+  .flow-diagram {
+    display: flex; align-items: center;
+    margin-bottom: 4rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    gap: 0;
+  }
+
+  .flow-node {
+    flex-shrink: 0;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    min-width: 160px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .flow-node:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 24px rgba(45,106,79,0.08);
+  }
+
+  .flow-node-icon { font-size: 1.4rem; margin-bottom: 0.6rem; }
+  .flow-node-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted-light);
+    margin-bottom: 0.3rem;
+  }
+  .flow-node-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+  .flow-node-examples {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .flow-arrow {
+    flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 0 0.75rem;
+    gap: 0.25rem;
+  }
+  .flow-arrow-line {
+    width: 32px; height: 1px;
+    background: var(--accent);
+    position: relative;
+  }
+  .flow-arrow-line::after {
+    content: '';
+    position: absolute;
+    right: -1px; top: -3px;
+    width: 0; height: 0;
+    border-left: 6px solid var(--accent);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+  .flow-arrow-label {
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* USE CASES */
+  .use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 4rem;
+  }
+
+  .use-case-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .use-case-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+  .use-case-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .use-case-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .use-case-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .pricing-card {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    background: var(--bg);
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .pricing-card:hover { transform: translateY(-4px); }
+
+  .pricing-card.featured {
+    border-color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .pricing-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-price {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 800;
+    font-size: 3.2rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+  .pricing-price .currency {
+    font-size: 1.4rem;
+    vertical-align: top;
+    margin-top: 0.5rem;
+    display: inline-block;
+    font-weight: 700;
+  }
+
+  .pricing-period {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  .pricing-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+  .pricing-features li {
+    font-size: 0.875rem;
+    color: var(--muted);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 0.75rem;
+  }
+  .pricing-features li::before { content: '✓'; color: var(--accent); font-weight: 600; flex-shrink: 0; }
+  .pricing-features li:last-child { border-bottom: none; }
+
+  .btn-outline {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.85rem;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    text-decoration: none;
+    display: block; text-align: center;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .btn-filled {
+    width: 100%;
+    background: var(--accent);
+    border: none;
+    color: #fff;
+    padding: 0.85rem;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: block; text-align: center;
+  }
+  .btn-filled:hover { background: var(--accent-mid); }
+
+  /* HOW IT WORKS */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+    position: relative;
+  }
+
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 20px; left: 20px; right: 20px;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .step-item { position: relative; }
+
+  .step-dot {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    position: relative; z-index: 1;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+
+  .step-item:hover .step-dot {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .step-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .step-text {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: var(--text);
+    padding: 7rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 5px;
+    background: var(--accent);
+  }
+
+  .cta-section h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    letter-spacing: -0.04em;
+    line-height: 1.0;
+    color: #fff;
+    margin-bottom: 1.25rem;
+  }
+
+  .cta-section h2 em {
+    font-style: normal;
+    color: var(--accent-mid);
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    max-width: 38ch;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .cta-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .cta-link:hover { background: var(--accent-mid); transform: translateY(-2px); }
+
+  .cta-note {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.3);
+    margin-top: 1.5rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 1.75rem 4rem;
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--bg);
+    flex-wrap: wrap; gap: 1rem;
+  }
+
+  .footer-copy { font-size: 0.8rem; color: var(--muted-light); }
+
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a {
+    font-size: 0.8rem;
+    color: var(--muted-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text); }
+
+  /* REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 1.1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-card { display: none; }
+    h1 { font-size: 3rem; }
+    .section { padding: 5rem 1.5rem; }
+    .divider { margin: 0 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .use-cases-grid { grid-template-columns: 1fr 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr 1fr; }
+    .steps-grid::before { display: none; }
+    .cta-section { padding: 5rem 1.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .use-cases-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Michal <span>Sajko</span></a>
+  <ul class="nav-links">
+    <li><a href="#o-mne">O mne</a></li>
+    <li><a href="#sluzba">FlowDesk</a></li>
+    <li><a href="#ceny">Ceny</a></li>
+  </ul>
+  <a href="mailto:michal.sajko@gmail.com" class="nav-cta">Napísať mi</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">IT Konzultant · Workflow Automation</div>
+      <h1>Procesy, ktoré<br /><em>fungujú</em><br />bez vás.</h1>
+      <p class="hero-sub">Prepojím váš formulár, task manager a firemný chat do jedného automatizovaného systému. Jednorazovo, bez mesačných poplatkov.</p>
+      <div class="hero-actions">
+        <a href="mailto:michal.sajko@gmail.com" class="btn-primary">
+          Dohodnúť hovor zadarmo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#sluzba" class="btn-ghost">
+          Ako to funguje
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-card-top">
+        <div class="hero-avatar">MS</div>
+        <div>
+          <div class="hero-card-name">Michal Sajko</div>
+          <div class="hero-card-role">IT Project Manager · Consultant</div>
+        </div>
+      </div>
+      <div class="hero-card-stat">
+        <span class="hero-card-stat-label">Skúsenosti</span>
+        <span class="hero-card-stat-val">7+ rokov</span>
+      </div>
+      <div class="hero-card-stat">
+        <span class="hero-card-stat-label">Certifikácie</span>
+        <span class="hero-card-stat-val">Scrum Master · ISTQB</span>
+      </div>
+      <div class="hero-card-stat">
+        <span class="hero-card-stat-label">Nástroje</span>
+        <span class="hero-card-stat-val">Make · Jira · Trello · Slack</span>
+      </div>
+      <div class="hero-card-stat">
+        <span class="hero-card-stat-label">Setup</span>
+        <span class="hero-card-stat-val green">3–5 pracovných dní</span>
+      </div>
+      <div class="hero-card-stat">
+        <span class="hero-card-stat-label">Dostupnosť</span>
+        <span class="hero-card-stat-val green"><span class="status-dot"></span>Voľný termín</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- O MNE -->
+<section class="section" id="o-mne">
+  <div class="section-inner">
+    <div class="section-label">O mne</div>
+    <h2 class="section-title">IT Project Manager s praxou v reálnom svete.</h2>
+
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>Som IT projektový manažér s <strong>viac ako 7 rokmi skúseností</strong> v oblasti vývoja digitálnych produktov, interných systémov a procesnej automatizácie.</p>
+        <p>V e-commerce som ako <strong>Scrum Master a Lead IT Development Team</strong> navrhol a zaviedol interný SLA proces a automatizáciu incident manažmentu — prepojenie Jira a Google Chat. Presne tento typ riešenia teraz ponúkam malým firmám.</p>
+        <p>Pracoval som na projektoch pre <strong>štátnu správu</strong> (digitalizácia verejných služieb cez ÚPVS), e-commerce platformy fungujúce v 11 krajinách, fintech aplikácie aj softvérové spoločnosti.</p>
+        <p>Verím, že <strong>dobre nastavený systém by mal fungovať bez vás</strong> — nie vyžadovať každodennú asistenciu konzultanta. Preto odovzdávam klientom plnú kontrolu vrátane manuálu a tréningu.</p>
+      </div>
+
+      <div class="credentials">
+        <div class="credential-item">
+          <div class="credential-icon">🎯</div>
+          <div>
+            <div class="credential-title">7+ rokov IT Project Management</div>
+            <div class="credential-desc">Digitálne produkty, e-commerce (11 krajín), štátna správa, fintech</div>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-icon">⚡</div>
+          <div>
+            <div class="credential-title">Certified Scrum Master</div>
+            <div class="credential-desc">Agile metodológie, sprint plánovanie, vedenie vývojových tímov</div>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-icon">🧪</div>
+          <div>
+            <div class="credential-title">ISTQB Certifikácia</div>
+            <div class="credential-desc">Softvérové testovanie a quality assurance</div>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-icon">🔗</div>
+          <div>
+            <div class="credential-title">No-code automatizácie · Jira Automation</div>
+            <div class="credential-desc">Reálne implementácie: SLA tracking, incident management, API integrácie</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FLOWDESK -->
+<section class="section service-section" id="sluzba">
+  <div class="section-inner">
+    <div class="service-header">
+      <div>
+        <div class="section-label">Moja služba</div>
+        <h2 class="section-title">FlowDesk — koniec chaosu v komunikácii tímu.</h2>
+        <p class="service-intro">Prepojím váš formulár, task manager a chat do jedného automatizovaného systému. Požiadavky sa už nestrácajú — každá je evidovaná, priradená a sledovaná.</p>
+      </div>
+    </div>
+
+    <!-- FLOW -->
+    <div class="flow-diagram reveal">
+      <div class="flow-node">
+        <div class="flow-node-icon">📝</div>
+        <div class="flow-node-label">Krok 1</div>
+        <div class="flow-node-title">eFormulár</div>
+        <div class="flow-node-examples">Google Forms · Jira · Typeform</div>
+      </div>
+      <div class="flow-arrow">
+        <div class="flow-arrow-line"></div>
+        <div class="flow-arrow-label">auto</div>
+      </div>
+      <div class="flow-node">
+        <div class="flow-node-icon">📋</div>
+        <div class="flow-node-label">Krok 2</div>
+        <div class="flow-node-title">Task Manager</div>
+        <div class="flow-node-examples">Trello · Jira · ClickUp</div>
+      </div>
+      <div class="flow-arrow">
+        <div class="flow-arrow-line"></div>
+        <div class="flow-arrow-label">auto</div>
+      </div>
+      <div class="flow-node">
+        <div class="flow-node-icon">🔔</div>
+        <div class="flow-node-label">Krok 3</div>
+        <div class="flow-node-title">Notifikácia</div>
+        <div class="flow-node-examples">Slack · Google Chat · Email</div>
+      </div>
+      <div class="flow-arrow">
+        <div class="flow-arrow-line"></div>
+        <div class="flow-arrow-label">update</div>
+      </div>
+      <div class="flow-node">
+        <div class="flow-node-icon">🔄</div>
+        <div class="flow-node-label">Krok 4</div>
+        <div class="flow-node-title">Thread reply</div>
+        <div class="flow-node-examples">Update ide do vlákna</div>
+      </div>
+    </div>
+
+    <!-- VIDEO + OFFER LINK -->
+    <div class="reveal" style="margin-bottom: 3rem;">
+      <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #000; margin-bottom: 1.5rem;">
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          style="width: 100%; display: block; max-height: 480px; object-fit: contain;"
+        >
+          <source src="flow_desk_intro.mov" type="video/mp4">
+          Váš prehliadač nepodporuje prehrávanie videa.
+        </video>
+      </div>
+      <div style="text-align: center;">
+        <a
+          href="https://flow-desk-offer.netlify.app/"
+          target="_blank"
+          style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent); padding: 0.75rem 1.75rem; border-radius: 100px; font-size: 0.9rem; font-weight: 500; text-decoration: none; transition: background 0.2s, transform 0.15s;"
+          onmouseover="this.style.background='var(--accent)';this.style.color='#fff';this.style.transform='translateY(-2px)'"
+          onmouseout="this.style.background='var(--accent-light)';this.style.color='var(--accent)';this.style.transform='translateY(0)'"
+        >
+          Zobraziť detailnú ponuku FlowDesk
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- USE CASES -->
+    <div class="use-cases-grid reveal">
+      <div class="use-case-card">
+        <div class="use-case-icon">🚨</div>
+        <div class="use-case-title">Incident Management</div>
+        <div class="use-case-desc">Okamžité hlásenie a sledovanie incidentov. IT tímy, e-shopy, SaaS firmy.</div>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-icon">📋</div>
+        <div class="use-case-title">SLA Tracking</div>
+        <div class="use-case-desc">Požiadavky zákazníkov s jasnými stavmi, prioritami a zodpovednosťou.</div>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-icon">✅</div>
+        <div class="use-case-title">Interné úlohy</div>
+        <div class="use-case-desc">Tím si navzájom zadáva úlohy cez formulár — všetko evidované, nič sa nestratí.</div>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-icon">🤝</div>
+        <div class="use-case-title">Externá spolupráca</div>
+        <div class="use-case-desc">Partneri a zákazníci posielajú požiadavky cez formulár priamo do vášho systému.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AKO TO FUNGUJE -->
+<section class="section" id="proces">
+  <div class="section-inner">
+    <div class="section-label">Proces</div>
+    <h2 class="section-title">Nastavíme, odovzdáme, odídeme.</h2>
+
+    <div class="steps-grid reveal">
+      <div class="step-item">
+        <div class="step-dot">01</div>
+        <div class="step-title">Úvodný hovor (zadarmo)</div>
+        <p class="step-text">30 minút bez záväzkov. Zistíme, čo potrebujete a navrhneme riešenie na mieru.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">02</div>
+        <div class="step-title">Implementácia</div>
+        <p class="step-text">Nastavím celý systém priamo na vašich účtoch pomocou no-code automatizačných nástrojov — 3 až 5 pracovných dní.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">03</div>
+        <div class="step-title">Odovzdanie a zaškolenie</div>
+        <p class="step-text">Funkčný systém + písomný manuál + tréning pre váš tím. Viete sami upraviť čokoľvek.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">04</div>
+        <div class="step-title">Idete sami</div>
+        <p class="step-text">Systém je váš. Funguje bez mojej asistencie. Ad hoc konzultácie dostupné na požiadanie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CENY -->
+<section class="section" id="ceny">
+  <div class="section-inner">
+    <div class="section-label">Ceny</div>
+    <h2 class="section-title">Jednorazová platba. Žiadne skryté poplatky.</h2>
+
+    <div class="pricing-grid reveal">
+      <div class="pricing-card">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-price"><span class="currency">€</span>490</div>
+        <div class="pricing-period">jednorazovo · bez DPH</div>
+        <ul class="pricing-features">
+          <li>1 automatizovaný flow</li>
+          <li>Prepojenie 2–3 nástrojov</li>
+          <li>Základná dokumentácia</li>
+          <li>Zaškolenie (1 hodina)</li>
+        </ul>
+        <a href="mailto:michal.sajko@gmail.com?subject=FlowDesk Starter" class="btn-outline">Dohodnúť hovor</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Najpopulárnejší</div>
+        <div class="pricing-name">Growth</div>
+        <div class="pricing-price"><span class="currency">€</span>990</div>
+        <div class="pricing-period">jednorazovo · bez DPH</div>
+        <ul class="pricing-features">
+          <li>Až 3 automatizované flows</li>
+          <li>Prepojenie 3–5 nástrojov</li>
+          <li>Kompletná dokumentácia</li>
+          <li>Zaškolenie tímu (2 hodiny)</li>
+        </ul>
+        <a href="mailto:michal.sajko@gmail.com?subject=FlowDesk Growth" class="btn-filled">Dohodnúť hovor zadarmo</a>
+      </div>
+    </div>
+
+    <p style="font-size:0.82rem;color:var(--muted);margin-top:1.5rem;text-align:center;">
+      Väčší projekt alebo špecifické požiadavky? <a href="mailto:michal.sajko@gmail.com" style="color:var(--accent);text-decoration:none;font-weight:500;">Dohodneme cenu individuálne →</a>
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Prvý hovor<br /><em>zadarmo.</em></h2>
+  <p>30 minút, bez záväzkov. Zistíme, či a ako vám vieme pomôcť.</p>
+  <a href="mailto:michal.sajko@gmail.com" class="cta-link">
+    Napísať mi
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  <p class="cta-note">Odpovedám do 24 hodín · michal.sajko@gmail.com · +421 914 703 355</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-copy">© 2026 Michal Sajko. Všetky práva vyhradené.</span>
+  <div class="footer-links">
+    <a href="mailto:michal.sajko@gmail.com">Email</a>
+    <a href="tel:+421914703355">+421 914 703 355</a>
+    <a href="https://www.linkedin.com/in/michal-sajko-624979176/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
