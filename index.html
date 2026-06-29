@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23ffffff'/><text x='50' y='68' font-family='Georgia,serif' font-size='48' font-weight='bold' text-anchor='middle'><tspan fill='%231a1a1a'>f</tspan><tspan fill='%232D6A4F'>d</tspan></text></svg>">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -638,7 +639,8 @@
 
   /* CTA */
   .cta-section {
-    background: var(--text);
+    background: var(--accent-light);
+    border-top: 1px solid rgba(45,106,79,0.15);
     padding: 7rem 4rem;
     text-align: center;
     position: relative;
@@ -659,18 +661,18 @@
     font-size: clamp(2.2rem, 5vw, 4rem);
     letter-spacing: -0.04em;
     line-height: 1.0;
-    color: #fff;
+    color: var(--text);
     margin-bottom: 1.25rem;
   }
 
   .cta-section h2 em {
     font-style: normal;
-    color: var(--accent-mid);
+    color: var(--accent);
   }
 
   .cta-section p {
     font-size: 1rem;
-    color: rgba(255,255,255,0.5);
+    color: var(--muted);
     max-width: 38ch;
     margin: 0 auto 2.5rem;
     line-height: 1.7;
@@ -692,7 +694,7 @@
 
   .cta-note {
     font-size: 0.78rem;
-    color: rgba(255,255,255,0.3);
+    color: var(--muted-light);
     margin-top: 1.5rem;
     letter-spacing: 0.04em;
   }
@@ -761,7 +763,7 @@
     <li><a href="#sluzba">FlowDesk</a></li>
     <li><a href="#ceny">Ceny</a></li>
   </ul>
-  <a href="https://flow-desk-onboarding.netlify.app" class="nav-cta">Napísať mi</a>
+  <a href="mailto:michal.sajko@gmail.com" class="nav-cta">Napísať mi</a>
 </nav>
 
 <!-- HERO -->
@@ -772,7 +774,7 @@
       <h1>Procesy, ktoré<br /><em>fungujú</em><br />bez vás.</h1>
       <p class="hero-sub">Prepojím váš formulár, task manager a firemný chat do jedného automatizovaného systému. Jednorazovo, bez mesačných poplatkov.</p>
       <div class="hero-actions">
-        <a href="https://flow-desk-onboarding.netlify.app" class="btn-primary">
+        <a href="mailto:michal.sajko@gmail.com" class="btn-primary">
           Dohodnúť hovor zadarmo
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -796,12 +798,12 @@
         <span class="hero-card-stat-val">7+ rokov</span>
       </div>
       <div class="hero-card-stat">
-        <span class="hero-card-stat-label">Certifikácie</span>
-        <span class="hero-card-stat-val">Scrum Master · ISTQB</span>
+        <span class="hero-card-stat-label">Služby</span>
+        <span class="hero-card-stat-val">FlowDesk · PM · QA</span>
       </div>
       <div class="hero-card-stat">
         <span class="hero-card-stat-label">Nástroje</span>
-        <span class="hero-card-stat-val">Make · Jira · Trello · Slack</span>
+        <span class="hero-card-stat-val">No-code tool · Task manager · Chat</span>
       </div>
       <div class="hero-card-stat">
         <span class="hero-card-stat-label">Setup</span>
@@ -825,10 +827,10 @@
 
     <div class="about-grid reveal">
       <div class="about-text">
-        <p>Som IT projektový manažér s <strong>viac ako 7 rokmi skúseností</strong> v oblasti vývoja digitálnych produktov, interných systémov a procesnej automatizácie.</p>
-        <p>V e-commerce som ako <strong>Scrum Master a Lead IT Development Team</strong> navrhol a zaviedol interný SLA proces a automatizáciu incident manažmentu — prepojenie Jira a Google Chat. Presne tento typ riešenia teraz ponúkam malým firmám.</p>
+        <p>IT projektový manažér s <strong>viac ako 7 rokmi skúseností</strong> v oblasti vývoja digitálnych produktov, interných systémov a procesnej automatizácie.</p>
+        <p>V e-commerce som navrhol a zaviedol interný SLA proces a automatizáciu incident manažmentu — tento typ riešenia teraz ponúkam firmám.</p>
         <p>Skúsenosti na projektoch v rámci <strong>Digitalizácie verejnej správy</strong>, e-commerce platformy fungujúce v 11 krajinách, fintech aplikácie aj softvérové spoločnosti.</p>
-        <p>Každé <strong>riešenie odovzdávam s manuálom a tréningom</strong>, aby váš tím mal plnú kontrolu od prvého dňa.</p>
+        <p>Každé <strong>riešenie odovzdávam s manuálom a tréningom</strong>, aby váš tím mal plnú kontrolu.</p>
       </div>
 
       <div class="credentials">
@@ -920,14 +922,17 @@
 
     <!-- VIDEO + OFFER LINK -->
     <div class="reveal" style="margin-bottom: 3rem;">
-      <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:16px;overflow:hidden;border:1px solid var(--border);">
-  <iframe
-    src="https://www.loom.com/embed/be4f62d6d7454d858feb799e3a4b7e2c"
-    frameborder="0"
-    allowfullscreen
-    style="position:absolute;top:0;left:0;width:100%;height:100%;">
-  </iframe>
-</div>
+      <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #000; margin-bottom: 1.5rem;">
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          style="width: 100%; display: block; max-height: 480px; object-fit: contain;"
+        >
+          <source src="flow_desk_intro.mov" type="video/mp4">
+          Váš prehliadač nepodporuje prehrávanie videa.
+        </video>
+      </div>
       <div style="text-align: center;">
         <a
           href="https://flow-desk-offer.netlify.app/"
@@ -1021,7 +1026,7 @@
           <li>Základná dokumentácia</li>
           <li>Zaškolenie (1 hodina)</li>
         </ul>
-        <a href="https://flow-desk-onboarding.netlify.app" class="btn-outline">Dohodnúť hovor</a>
+        <a href="mailto:michal.sajko@gmail.com?subject=FlowDesk Starter" class="btn-outline">Dohodnúť hovor</a>
       </div>
 
       <div class="pricing-card featured">
@@ -1035,12 +1040,12 @@
           <li>Kompletná dokumentácia</li>
           <li>Zaškolenie tímu (2 hodiny)</li>
         </ul>
-        <a href="https://flow-desk-onboarding.netlify.app" class="btn-filled">Dohodnúť hovor zadarmo</a>
+        <a href="mailto:michal.sajko@gmail.com?subject=FlowDesk Growth" class="btn-filled">Dohodnúť hovor zadarmo</a>
       </div>
     </div>
 
     <p style="font-size:0.82rem;color:var(--muted);margin-top:1.5rem;text-align:center;">
-      Väčší projekt alebo špecifické požiadavky? <a href="https://flow-desk-onboarding.netlify.app" style="color:var(--accent);text-decoration:none;font-weight:500;">Dohodneme cenu individuálne →</a>
+      Väčší projekt alebo špecifické požiadavky? <a href="mailto:michal.sajko@gmail.com" style="color:var(--accent);text-decoration:none;font-weight:500;">Dohodneme cenu individuálne →</a>
     </p>
   </div>
 </section>
@@ -1049,7 +1054,7 @@
 <section class="cta-section">
   <h2>Prvý hovor<br /><em>zadarmo.</em></h2>
   <p>30 minút, bez záväzkov. Zistíme, či a ako vám vieme pomôcť.</p>
-  <a href="https://flow-desk-onboarding.netlify.app" class="cta-link">
+  <a href="mailto:michal.sajko@gmail.com" class="cta-link">
     Napísať mi
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
