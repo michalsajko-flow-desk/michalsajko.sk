@@ -3,828 +3,351 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Michal Sajko — IT Projekt manager & Workflow Automation</title>
+<title>Michal Sajko — IT Project Manager & Workflow Automation</title>
 <meta name="description" content="IT Projektový manager s 7+ rokmi praxe v oblasti vývoja digitálnych produktov, interných systémov a procesnej automatizácie. FlowDesk prepojí formulár, task manager a chat do jedného systému — jednorazovo, bez mesačných poplatkov." />
-<link rel="canonical" href="https://michalsajko.sk/" />
-<meta name="theme-color" content="#2d6a4f" />
-
+<meta property="og:title" content="Michal Sajko — IT Project Manager & Workflow Automation" />
+<meta property="og:description" content="FlowDesk prepojí formulár, task manager a chat do jedného automatizovaného systému. Jednorazovo, bez mesačných poplatkov." />
 <meta property="og:type" content="website" />
-<meta property="og:locale" content="sk_SK" />
 <meta property="og:url" content="https://michalsajko.sk/" />
-<meta property="og:title" content="Michal Sajko — IT Project manager & Workflow Automation" />
-<meta property="og:description" content="IT Projektový manager s 7+ rokmi praxe v oblasti vývoja digitálnych produktov, interných systémov a procesnej automatizácie. FlowDesk prepojí formulár, task manager a chat do jedného systému — jednorazovo, bez mesačných poplatkov." />
+<meta property="og:locale" content="sk_SK" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Michal Sajko — IT Project manager & Workflow Automation" />
-<meta name="twitter:description" content="IT Projektový manager s 7+ rokmi praxe v oblasti vývoja digitálnych produktov, interných systémov a procesnej automatizácie. FlowDesk prepojí formulár, task manager a chat do jedného systému." />
-
+<meta name="twitter:title" content="Michal Sajko — IT Project Manager & Workflow Automation" />
+<meta name="twitter:description" content="FlowDesk prepojí formulár, task manager a chat do jedného automatizovaného systému." />
+<meta name="theme-color" content="#2d6a4f" />
+<link rel="canonical" href="https://michalsajko.sk/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23ffffff'/><text x='50' y='68' font-family='Georgia,serif' font-size='48' font-weight='bold' text-anchor='middle'><tspan fill='%231a1a1a'>f</tspan><tspan fill='%232D6A4F'>d</tspan></text></svg>">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "name": "Michal Sajko",
-      "jobTitle": "IT Project Manager & Workflow Automation Consultant",
-      "url": "https://michalsajko.sk/",
-      "email": "mailto:michal.sajko@gmail.com",
-      "telephone": "+421914703355",
-      "sameAs": ["https://www.linkedin.com/in/michal-sajko-624979176/"],
-      "knowsAbout": ["IT Project Management", "Workflow Automation", "Scrum", "ISTQB", "No-code automatizácie"]
-    },
-    {
-      "@type": "Service",
-      "serviceType": "Workflow Automation",
-      "name": "FlowDesk",
-      "provider": { "@type": "Person", "name": "Michal Sajko" },
-      "areaServed": "SK",
-      "description": "Prepojenie formulára, task manažéra a firemného chatu do jedného automatizovaného systému.",
-      "offers": [
-        { "@type": "Offer", "name": "Starter", "price": "490", "priceCurrency": "EUR" },
-        { "@type": "Offer", "name": "Growth", "price": "990", "priceCurrency": "EUR" }
-      ]
-    }
-  ]
-}
-</script>
-
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
+  :root{
+    --bg:#ffffff;
+    --surface:#eef5f1;
+    --accent:#2d6a4f;
+    --accent-dark:#1e4d38;
+    --text:#1b2a22;
+    --muted:#5c6b62;
+    --border:rgba(27,42,34,0.12);
+    --border-soft:rgba(27,42,34,0.07);
+  }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
-
-  :root{
-    --bg:#fbfaf8;
-    --surface:#f2f5f1;
-    --surface-2:#eaefe9;
-    --border:#e1e6df;
-    --ink:#10140f;
-    --muted:#5b645c;
-    --muted-2:#8b948a;
-    --accent:#2d6a4f;
-    --accent-mid:#52976e;
-    --accent-light:#eef5f1;
-    --accent-deep:#173d2c;
-    --glow:rgba(45,106,79,.20);
-    --card-shadow:0 1px 2px rgba(16,20,15,.04), 0 12px 32px -12px rgba(16,20,15,.10);
-    --card-shadow-lg:0 4px 8px rgba(16,20,15,.04), 0 24px 56px -16px rgba(16,20,15,.16);
-  }
-
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#0a0d0a;
-      --surface:#121712;
-      --surface-2:#161c15;
-      --border:#212a1f;
-      --ink:#f1f4f0;
-      --muted:#9aa398;
-      --muted-2:#6c766a;
-      --accent:#4fae7f;
-      --accent-mid:#6ec298;
-      --accent-light:rgba(79,174,127,.12);
-      --accent-deep:#0d2417;
-      --glow:rgba(79,174,127,.28);
-      --card-shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 32px -12px rgba(0,0,0,.5);
-      --card-shadow-lg:0 4px 8px rgba(0,0,0,.3), 0 24px 56px -16px rgba(0,0,0,.6);
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#0a0d0a; --surface:#121712; --surface-2:#161c15; --border:#212a1f;
-    --ink:#f1f4f0; --muted:#9aa398; --muted-2:#6c766a;
-    --accent:#4fae7f; --accent-mid:#6ec298; --accent-light:rgba(79,174,127,.12); --accent-deep:#0d2417;
-    --glow:rgba(79,174,127,.28);
-    --card-shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 32px -12px rgba(0,0,0,.5);
-    --card-shadow-lg:0 4px 8px rgba(0,0,0,.3), 0 24px 56px -16px rgba(0,0,0,.6);
-  }
-  :root[data-theme="light"]{
-    --bg:#fbfaf8; --surface:#f2f5f1; --surface-2:#eaefe9; --border:#e1e6df;
-    --ink:#10140f; --muted:#5b645c; --muted-2:#8b948a;
-    --accent:#2d6a4f; --accent-mid:#52976e; --accent-light:#eef5f1; --accent-deep:#173d2c;
-    --glow:rgba(45,106,79,.20);
-    --card-shadow:0 1px 2px rgba(16,20,15,.04), 0 12px 32px -12px rgba(16,20,15,.10);
-    --card-shadow-lg:0 4px 8px rgba(16,20,15,.04), 0 24px 56px -16px rgba(16,20,15,.16);
-  }
-
   body{
     background:var(--bg);
-    color:var(--ink);
-    font-family:'Inter', -apple-system, 'Segoe UI', system-ui, sans-serif;
+    color:var(--text);
+    font-family:'DM Sans',sans-serif;
     font-weight:400;
+    line-height:1.5;
     overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
   }
-
-  h1, .section-title, .nav-logo-text, .nav-logo-mark, .flow-card-title,
-  .mini-node-text-title, .status-card-name, .flow-node-title, .cta-band-title,
-  .usecase-title, .tl-title, .price-name, .final-cta h2{
-    font-family:'Syne', sans-serif;
-  }
-
-  .price-value{ font-family:'Inter', sans-serif; }
-
   a{color:inherit;}
-  img,svg{display:block;max-width:100%;}
-  .icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;}
+  img{display:block;max-width:100%;}
 
-  /* ============ NAV ============ */
-  .nav-wrap{ position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:center; padding:1.1rem 1.5rem 0; }
+  /* subtle grid texture behind hero */
+  .grid-bg{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(45,106,79,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(45,106,79,0.05) 1px, transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(ellipse 75% 65% at 50% 30%, black 20%, transparent 80%);
+    pointer-events:none;
+  }
+
+  /* NAV */
   nav{
-    width:100%; max-width:1160px;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:.6rem .6rem .6rem 1.4rem;
-    background:color-mix(in srgb, var(--bg) 78%, transparent);
-    backdrop-filter:blur(20px) saturate(1.4);
-    -webkit-backdrop-filter:blur(20px) saturate(1.4);
-    border:1px solid var(--border);
-    border-radius:100px;
-    box-shadow:var(--card-shadow);
-    transition:box-shadow .3s, background .3s;
+    position:sticky;top:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:1.1rem 2.5rem;
+    background:rgba(255,255,255,0.88);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color .25s;
   }
-  nav.scrolled{ box-shadow:var(--card-shadow-lg); }
-
-  .nav-logo{ display:flex; align-items:center; gap:.55rem; text-decoration:none; }
-  .nav-logo-mark{
-    width:30px;height:30px;border-radius:9px;
-    background:linear-gradient(135deg,var(--accent),var(--accent-deep));
+  nav.scrolled{border-color:var(--border);}
+  .logo{
+    display:flex;align-items:center;gap:.6rem;
+    font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;
+    text-decoration:none;color:var(--text);letter-spacing:-0.01em;
+  }
+  .logo-mark{
+    width:30px;height:30px;border-radius:8px;
+    background:var(--text);
     display:flex;align-items:center;justify-content:center;
-    color:#fff; font-weight:800; font-size:.72rem; letter-spacing:-.02em;
-    box-shadow:0 4px 14px -4px var(--glow);
-    flex-shrink:0;
+    font-family:'Syne',sans-serif;font-weight:800;font-size:.8rem;
+    color:#fff;flex-shrink:0;
   }
-  .nav-logo-text{ font-weight:800; letter-spacing:-.02em; font-size:1rem; color:var(--ink); }
-  .nav-logo-text span{ color:var(--accent); }
-
-  .nav-links{ display:flex; gap:2.1rem; list-style:none; align-items:center; }
-  .nav-links a{ font-size:.85rem; color:var(--muted); text-decoration:none; transition:color .2s; font-weight:500; }
-  .nav-links a:hover{ color:var(--ink); }
-  .nav-links a.nav-external{ display:inline-flex; align-items:center; gap:.3rem; color:var(--accent); }
-  .nav-links a.nav-external .icon{ width:13px;height:13px; transition:transform .2s; }
-  .nav-links a.nav-external:hover .icon{ transform:translate(2px,-2px); }
-
-  .nav-right{ display:flex; align-items:center; gap:.6rem; }
-  .btn{ font-family:inherit; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:.45rem; border:none; }
-  .btn-ghost-pill{
-    background:transparent; color:var(--ink); border:1px solid var(--border);
-    padding:.55rem 1.1rem; border-radius:100px; font-weight:600; font-size:.82rem;
-    transition:border-color .2s, background .2s;
+  .logo-mark span{color:var(--accent);}
+  .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+  .nav-links a{
+    font-size:.875rem;color:var(--muted);text-decoration:none;
+    transition:color .2s;
   }
-  .btn-ghost-pill:hover{ border-color:var(--accent); background:var(--accent-light); }
-  .btn-solid-pill{
-    background:var(--ink); color:var(--bg);
-    padding:.6rem 1.3rem; border-radius:100px; font-weight:600; font-size:.82rem;
-    transition:transform .15s, box-shadow .2s;
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{
+    background:var(--accent);color:#fff;border:none;
+    padding:.65rem 1.4rem;border-radius:100px;
+    font-family:'DM Sans',sans-serif;font-weight:600;font-size:.85rem;
+    cursor:pointer;text-decoration:none;display:inline-block;
+    transition:background .2s, transform .15s;
   }
-  .btn-solid-pill:hover{ transform:translateY(-1px); box-shadow:0 10px 24px -8px rgba(0,0,0,.35); }
+  .nav-cta:hover{background:var(--accent-dark);transform:translateY(-1px);}
+  @media (max-width:840px){ .nav-links{display:none;} nav{padding:1rem 1.4rem;} }
 
-  /* ============ HERO ============ */
-  .hero{ position:relative; padding:11rem 1.5rem 6rem; overflow:hidden; }
-  .hero-blobs{ position:absolute; inset:0; z-index:0; pointer-events:none; }
-  .blob{ position:absolute; border-radius:50%; filter:blur(70px); opacity:.55; }
-  .blob-1{ width:560px;height:560px; background:radial-gradient(circle,var(--accent) 0%,transparent 70%); top:-220px; left:-160px; opacity:.35; }
-  .blob-2{ width:460px;height:460px; background:radial-gradient(circle,var(--accent-mid) 0%,transparent 70%); top:60px; right:-140px; opacity:.30; }
-  .blob-3{ width:380px;height:380px; background:radial-gradient(circle,var(--accent-deep) 0%,transparent 70%); bottom:-200px; left:30%; opacity:.20; }
-
-  .hero-inner{
-    position:relative; z-index:1;
-    max-width:1160px; margin:0 auto;
-    display:grid; grid-template-columns:1.05fr .95fr; gap:4rem; align-items:center;
-  }
-
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:.5rem;
-    font-size:.72rem; text-transform:uppercase; letter-spacing:.14em; font-weight:700;
-    color:var(--accent); background:var(--accent-light); border:1px solid var(--border);
-    padding:.4rem .85rem .4rem .6rem; border-radius:100px; margin-bottom:1.75rem;
-  }
-  .eyebrow .dot{ width:6px;height:6px;border-radius:50%; background:var(--accent); animation:pulse 2s infinite; }
-  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.35;} }
-
-  h1{ font-size:clamp(2.6rem,4.6vw,4.2rem); line-height:1.02; letter-spacing:-.045em; font-weight:800; margin-bottom:1.6rem; text-wrap:balance; }
-  h1 .grad{
-    background:linear-gradient(100deg,var(--accent) 10%,var(--accent-mid) 55%,var(--accent) 95%);
-    -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
-
-  .hero-sub{ font-size:1.08rem; color:var(--muted); line-height:1.7; max-width:44ch; margin-bottom:2.4rem; font-weight:400; }
-
-  .hero-actions{ display:flex; align-items:center; gap:1.4rem; flex-wrap:wrap; margin-bottom:2.75rem; }
-  .btn-primary{
-    background:var(--ink); color:var(--bg); padding:1rem 1.85rem; border-radius:100px;
-    font-weight:700; font-size:.95rem; box-shadow:0 14px 30px -12px rgba(16,20,15,.35);
-    transition:transform .18s, box-shadow .18s;
-  }
-  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 18px 36px -10px rgba(16,20,15,.4); }
-  .btn-primary .icon{ width:16px;height:16px; transition:transform .2s; }
-  .btn-primary:hover .icon{ transform:translateX(3px); }
-
-  .btn-text{ font-size:.92rem; color:var(--ink); font-weight:600; display:inline-flex; align-items:center; gap:.45rem; text-decoration:none; border-bottom:1.5px solid var(--border); padding-bottom:2px; transition:border-color .2s,color .2s; }
-  .btn-text:hover{ border-color:var(--accent); color:var(--accent); }
-
-  .trust-row{ display:flex; align-items:center; gap:1.1rem; flex-wrap:wrap; }
-  .trust-row-label{ font-size:.75rem; color:var(--muted-2); font-weight:600; }
-  .trust-pill{ font-size:.75rem; color:var(--muted); background:var(--surface); border:1px solid var(--border); padding:.35rem .75rem; border-radius:100px; font-weight:500; }
-
-  /* HERO VISUAL: flow card */
-  .hero-visual{ position:relative; }
-  .flow-card{
-    background:var(--bg); border:1px solid var(--border); border-radius:26px;
-    padding:2rem 1.75rem 2.25rem; box-shadow:var(--card-shadow-lg); position:relative; z-index:2;
-  }
-  .flow-card-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:1.75rem; }
-  .flow-card-title{ font-weight:800; font-size:.92rem; letter-spacing:-.01em; }
-  .flow-card-live{ display:inline-flex; align-items:center; gap:.4rem; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); }
-  .flow-card-live .dot{ width:6px;height:6px;border-radius:50%;background:var(--accent); animation:pulse 2s infinite; }
-
-  .mini-flow{ display:flex; flex-direction:column; gap:0; }
-  .mini-node{ display:flex; align-items:center; gap:.85rem; padding:.85rem 0; position:relative; }
-  .mini-node-badge{
-    width:40px;height:40px;border-radius:12px; flex-shrink:0;
-    background:linear-gradient(135deg,var(--accent),var(--accent-deep)); color:#fff;
-    display:flex;align-items:center;justify-content:center; box-shadow:0 6px 16px -6px var(--glow);
-  }
-  .mini-node-badge .icon{ width:18px;height:18px; stroke:#fff; }
-  .mini-node-text-title{ font-weight:700; font-size:.86rem; }
-  .mini-node-text-sub{ font-size:.74rem; color:var(--muted); margin-top:.1rem; }
-  .mini-node-rail{
-    position:absolute; left:19px; top:56px; bottom:-14px; width:2px;
-    background:linear-gradient(var(--border),var(--border));
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:6rem 2.5rem 4.5rem;
+    text-align:center;
     overflow:hidden;
   }
-  .mini-node-rail::after{
-    content:''; position:absolute; left:0; top:-40%; width:100%; height:40%;
-    background:linear-gradient(var(--accent),transparent);
-    animation:flowDown 2.4s linear infinite;
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--accent);
+    background:var(--surface);border:1px solid rgba(45,106,79,0.18);
+    border-radius:100px;padding:.4rem 1rem;margin-bottom:1.6rem;
+    position:relative;z-index:2;
   }
-  @keyframes flowDown{ 0%{ top:-40%; } 100%{ top:100%; } }
-
-  .status-card{
-    position:absolute; z-index:3; left:-1.5rem; bottom:-1.75rem;
-    background:var(--bg); border:1px solid var(--border); border-radius:18px;
-    padding:1rem 1.25rem; box-shadow:var(--card-shadow-lg);
-    display:flex; align-items:center; gap:.9rem; min-width:220px;
+  .eyebrow::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;}
+  h1{
+    position:relative;z-index:2;
+    font-family:'Syne',sans-serif;font-weight:800;
+    font-size:clamp(2.4rem,5.5vw,4.4rem);
+    line-height:1.03;letter-spacing:-0.03em;
+    max-width:16ch;margin:0 auto 1.4rem;
   }
-  .status-avatar{
-    width:38px;height:38px;border-radius:50%; background:var(--accent-light); border:2px solid var(--accent);
-    display:flex;align-items:center;justify-content:center; font-weight:800; font-size:.72rem; color:var(--accent); flex-shrink:0;
+  h1 em{font-style:normal;color:var(--accent);}
+  .hero-sub{
+    position:relative;z-index:2;
+    max-width:46ch;margin:0 auto 2.4rem;
+    font-size:1.05rem;color:var(--muted);line-height:1.7;
   }
-  .status-card-name{ font-weight:700; font-size:.8rem; }
-  .status-card-role{ font-size:.68rem; color:var(--accent); font-weight:600; }
-
-  @media (max-width:960px){
-    .hero-inner{ grid-template-columns:1fr; }
-    .status-card{ display:none; }
-    .nav-links{ display:none; }
+  .hero-actions{
+    position:relative;z-index:2;
+    display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;
   }
-
-  @media (max-width:480px){
-    .nav-wrap{ padding:.7rem .7rem 0; }
-    nav{ padding:.5rem .5rem .5rem .9rem; gap:.5rem; }
-    .nav-logo-mark{ width:26px; height:26px; font-size:.62rem; }
-    .nav-logo-text{ font-size:.82rem; }
-    .nav-right{ gap:.4rem; }
-    .btn-ghost-pill{ display:none; }
-    .btn-solid-pill{ padding:.55rem 1rem; font-size:.76rem; }
-    .hero{ padding-top:8.5rem; }
+  .btn-primary{
+    background:var(--accent);color:#fff;border:none;
+    padding:.95rem 2rem;border-radius:100px;
+    font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;
+    text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;
+    transition:background .2s, transform .15s;
   }
-
-  /* ============ SECTIONS shared ============ */
-  .section{ padding:6.5rem 1.5rem; position:relative; }
-  .section-inner{ max-width:1160px; margin:0 auto; }
-  @media (max-width:640px){
-    .section{ padding:3.5rem .9rem; }
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px);}
+  .btn-ghost{
+    color:var(--text);border:1px solid var(--border);
+    padding:.95rem 1.8rem;border-radius:100px;
+    font-size:.9rem;text-decoration:none;
+    transition:border-color .2s, background .2s;
   }
-  .label{
-    display:inline-flex; align-items:center; gap:.6rem;
-    font-size:.72rem; text-transform:uppercase; letter-spacing:.14em; font-weight:700; color:var(--accent);
-    margin-bottom:1.1rem;
+  .btn-ghost:hover{border-color:var(--accent);background:var(--surface);}
+  .hero-note{
+    position:relative;z-index:2;
+    font-family:'DM Mono',monospace;font-size:.72rem;color:var(--muted);
+    letter-spacing:.04em;
   }
-  .label::before{ content:''; width:18px;height:2px; background:var(--accent); border-radius:2px; }
-  .section-title{ font-size:clamp(1.7rem,3vw,2.55rem); font-weight:800; letter-spacing:-.03em; line-height:1.12; max-width:26ch; text-wrap:balance; }
-  .section-sub{ font-size:1rem; color:var(--muted); max-width:52ch; margin-top:1rem; line-height:1.7; }
-
-  .divider{ height:1px; background:var(--border); margin:0 1.5rem; }
-
-  /* ============ ABOUT (mini) ============ */
-  .mini-about{ padding:4rem 1.5rem; }
-  .mini-about-inner{ max-width:1160px; margin:0 auto; display:flex; align-items:flex-start; gap:3rem; flex-wrap:wrap; }
-  .mini-about-badge{
-    width:44px;height:44px;border-radius:50%; background:var(--accent-light); border:1.5px solid var(--accent);
-    display:flex;align-items:center;justify-content:center; font-weight:800; font-size:.74rem; color:var(--accent); flex-shrink:0;
-  }
-  .mini-about-body{ flex:1; min-width:260px; max-width:64ch; }
-  .mini-about-body p{ font-size:.95rem; color:var(--muted); line-height:1.75; }
-  .mini-about-body p+p{ margin-top:.9rem; }
-  .mini-about-body strong{ color:var(--ink); font-weight:700; }
-  .mini-about-body a{ margin-top:1rem; }
-
-  /* ============ FLOWDESK / SERVICE ============ */
-  .service-section{ background:var(--surface); border-radius:36px; margin:0 1rem; padding:5.5rem 2.5rem; }
-  .service-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; margin-bottom:4rem; }
-  @media (max-width:640px){
-    #sluzba{ padding:3.5rem .75rem !important; }
-    .service-section{ margin:0; padding:2.5rem 1.1rem; border-radius:22px; }
-    .service-head{ margin-bottom:2.25rem; }
-  }
-  .flowdesk-link{ color:var(--accent); text-decoration:none; position:relative; display:inline-flex; align-items:center; gap:.25rem; }
-  .flowdesk-link .icon{ width:18px;height:18px; transition:transform .2s; }
-  .flowdesk-link:hover .icon{ transform:translate(2px,-2px); }
-  .flowdesk-link::after{ content:''; position:absolute; left:0;right:0;bottom:-2px; height:2px; background:var(--accent); transform:scaleX(0); transform-origin:left; transition:transform .25s ease; }
-  .flowdesk-link:hover::after{ transform:scaleX(1); }
-
-  /* animated flow row */
-  .flow-row{ display:flex; align-items:stretch; gap:0; margin-bottom:3rem; overflow-x:auto; padding-bottom:.5rem; }
-  .flow-node{
-    flex:1 1 220px; min-width:200px; background:var(--bg); border:1px solid var(--border); border-radius:18px;
-    padding:1.4rem 1.4rem; transition:border-color .2s, box-shadow .2s, transform .2s;
-  }
-  .flow-node:hover{ border-color:var(--accent); box-shadow:var(--card-shadow); transform:translateY(-3px); }
-  .flow-node-badge{
-    width:38px;height:38px;border-radius:11px; background:linear-gradient(135deg,var(--accent),var(--accent-deep));
-    color:#fff; display:flex;align-items:center;justify-content:center; margin-bottom:.9rem;
-    box-shadow:0 6px 16px -6px var(--glow);
-  }
-  .flow-node-badge .icon{ width:17px;height:17px; stroke:#fff; }
-  .flow-node-label{ font-size:.65rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted-2); font-weight:700; margin-bottom:.3rem; }
-  .flow-node-title{ font-weight:700; font-size:.94rem; margin-bottom:.3rem; }
-  .flow-node-ex{ font-size:.76rem; color:var(--muted); }
-
-  .flow-connector{ flex:0 0 48px; display:flex; align-items:center; justify-content:center; position:relative; }
-  .flow-connector .track{ width:100%; height:2px; background:var(--border); border-radius:2px; position:relative; overflow:hidden; }
-  .flow-connector .track::after{
-    content:''; position:absolute; top:0; left:-30%; width:30%; height:100%;
-    background:linear-gradient(90deg,transparent,var(--accent),transparent);
-    animation:flowRight 1.8s linear infinite;
-  }
-  .flow-connector:nth-child(4) .track::after{ animation-delay:.3s; }
-  .flow-connector:nth-child(6) .track::after{ animation-delay:.6s; }
-  @keyframes flowRight{ 0%{ left:-30%; } 100%{ left:100%; } }
-  @media (max-width:800px){ .flow-connector{ display:none; } .flow-row{ flex-wrap:wrap; } .flow-node{ flex:1 1 45%; } }
-  @media (max-width:520px){ .flow-row{ gap:.7rem; } .flow-node{ flex:1 1 100%; min-width:0; padding:1.1rem 1.2rem; } }
-
-  /* CTA band */
-  .cta-band{
-    display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap;
-    background:linear-gradient(120deg,var(--accent-deep),var(--accent));
-    border-radius:22px; padding:2rem 2.4rem; margin-bottom:3.5rem; position:relative; overflow:hidden;
-  }
-  .cta-band::after{
-    content:''; position:absolute; right:-60px; top:-60px; width:220px;height:220px; border-radius:50%;
-    background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%);
-  }
-  .cta-band-text{ color:#fff; position:relative; z-index:1; }
-  .cta-band-title{ font-weight:800; font-size:1.2rem; margin-bottom:.35rem; letter-spacing:-.01em; }
-  .cta-band-sub{ font-size:.88rem; color:rgba(255,255,255,.82); line-height:1.5; max-width:46ch; }
-  .cta-band-btn{
-    position:relative; z-index:1; background:#fff; color:var(--accent-deep); font-weight:700; font-size:.92rem;
-    padding:.9rem 1.8rem; border-radius:100px; display:inline-flex; align-items:center; gap:.5rem; text-decoration:none;
-    transition:transform .18s, box-shadow .2s; flex-shrink:0;
-  }
-  .cta-band-btn:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -10px rgba(0,0,0,.3); }
-  .cta-band-btn .icon{ width:16px;height:16px; }
-  @media (max-width:640px){
-    .cta-band{ padding:1.5rem 1.35rem; gap:1.1rem; margin-bottom:2.25rem; }
-    .cta-band-btn{ width:100%; justify-content:center; }
+  .sectors{
+    position:relative;z-index:2;
+    margin-top:3.2rem;padding-top:1.6rem;border-top:1px solid var(--border-soft);
+    display:flex;justify-content:center;gap:2.2rem;flex-wrap:wrap;
+    font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--muted);max-width:640px;margin-left:auto;margin-right:auto;
   }
 
-  /* demo preview browser chrome */
-  .demo-frame{
-    background:var(--bg); border:1px solid var(--border); border-radius:18px; overflow:hidden;
-    box-shadow:var(--card-shadow-lg); margin-bottom:1.75rem;
+  /* SECTION SHELL */
+  .section{padding:5.5rem 2.5rem;max-width:1080px;margin:0 auto;}
+  .section-label{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-family:'DM Mono',monospace;font-size:.72rem;text-transform:uppercase;
+    letter-spacing:.12em;color:var(--accent);margin-bottom:1rem;
   }
-  .demo-frame-bar{ display:flex; align-items:center; gap:.5rem; padding:.75rem 1rem; border-bottom:1px solid var(--border); background:var(--surface); }
-  .demo-frame-bar .d{ width:9px;height:9px;border-radius:50%; background:var(--border); flex-shrink:0; }
-  .demo-frame-bar .d.g{ background:var(--accent-mid); }
-  .demo-frame-url{ margin-left:.75rem; font-size:.72rem; color:var(--muted-2); background:var(--bg); border:1px solid var(--border); border-radius:100px; padding:.25rem .9rem; flex:1; max-width:280px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-  .demo-frame-media{ position:relative; padding-bottom:56%; height:0; }
-  .demo-frame-media iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
-  .demo-frame-cta{
-    position:absolute; right:1.25rem; bottom:1.25rem;
-    display:inline-flex; align-items:center; gap:.5rem; background:#fff; color:var(--accent-deep);
-    padding:.7rem 1.3rem; border-radius:100px; font-weight:700; font-size:.85rem; box-shadow:0 8px 20px -6px rgba(0,0,0,.3);
-    text-decoration:none; pointer-events:none;
-  }
-  .demo-frame-cta .icon{ width:14px;height:14px; flex-shrink:0; }
-  .demo-note{ text-align:center; font-size:.82rem; color:var(--muted); margin-bottom:3.5rem; }
-  .demo-note a{ color:var(--accent); font-weight:600; text-decoration:none; }
-  .demo-note a:hover{ text-decoration:underline; }
-  @media (max-width:640px){
-    .demo-frame-bar{ padding:.6rem .7rem; gap:.35rem; }
-    .demo-frame-url{ display:none; }
-    /* Stop the floating badge from sitting on top of the Loom player's own controls */
-    .demo-frame-cta{
-      position:static; margin:.85rem auto 1rem; width:max-content; pointer-events:auto;
-      box-shadow:none; border:1px solid var(--border);
-    }
-    .demo-frame-media{ padding-bottom:62%; }
-    .demo-note{ margin-bottom:2.25rem; }
+  .section-title{
+    font-family:'Syne',sans-serif;font-weight:700;
+    font-size:clamp(1.7rem,3.4vw,2.4rem);letter-spacing:-0.02em;
+    line-height:1.15;max-width:22ch;
   }
 
-  /* use cases bento */
-  .usecase-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.1rem; margin-bottom:3.5rem; }
-  .usecase-card{ background:var(--bg); border:1px solid var(--border); border-radius:16px; padding:1.5rem; transition:border-color .2s, transform .2s, box-shadow .2s; }
-  .usecase-card:hover{ border-color:var(--accent); transform:translateY(-3px); box-shadow:var(--card-shadow); }
-  .usecase-icon{ width:38px;height:38px;border-radius:11px; background:var(--accent-light); color:var(--accent); display:flex;align-items:center;justify-content:center; margin-bottom:1rem; }
-  .usecase-title{ font-weight:700; font-size:.92rem; margin-bottom:.5rem; }
-  .usecase-desc{ font-size:.8rem; color:var(--muted); line-height:1.6; }
-  @media (max-width:900px){ .usecase-grid{ grid-template-columns:1fr 1fr; } }
-  @media (max-width:560px){ .usecase-grid{ grid-template-columns:1fr; } }
-
-  .footer-link-center{ text-align:center; }
-  .footer-link-center a{ display:inline-flex; align-items:center; gap:.5rem; color:var(--accent); text-decoration:none; font-weight:600; font-size:.92rem; border-bottom:1px solid transparent; transition:border-color .2s; }
-  .footer-link-center a:hover{ border-color:var(--accent); }
-  .footer-link-center a .icon{ width:14px;height:14px; transition:transform .2s; }
-  .footer-link-center a:hover .icon{ transform:translate(2px,-2px); }
-
-  /* ============ PROCESS timeline ============ */
-  .timeline{ position:relative; margin-top:3.5rem; display:grid; grid-template-columns:repeat(4,1fr); gap:1.75rem; }
-  .timeline::before{ content:''; position:absolute; top:23px; left:5%; right:5%; height:2px; background:var(--border); }
-  .tl-item{ position:relative; }
-  .tl-badge{
-    width:46px;height:46px;border-radius:14px; background:var(--bg); border:1px solid var(--border);
-    display:flex;align-items:center;justify-content:center; color:var(--muted); margin-bottom:1.4rem; position:relative; z-index:1;
-    transition:border-color .2s,color .2s,background .2s;
+  /* ABOUT */
+  .about{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center;
   }
-  .tl-item:hover .tl-badge{ border-color:var(--accent); color:var(--accent); background:var(--accent-light); }
-  .tl-step{ font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin-bottom:.5rem; }
-  .tl-title{ font-weight:700; font-size:.98rem; margin-bottom:.55rem; letter-spacing:-.01em; }
-  .tl-text{ font-size:.85rem; color:var(--muted); line-height:1.65; }
-  @media (max-width:900px){ .timeline{ grid-template-columns:1fr 1fr; } .timeline::before{ display:none; } }
-  @media (max-width:560px){ .timeline{ grid-template-columns:1fr; } }
-
-  /* ============ PRICING ============ */
-  .pricing-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:3.5rem; }
-  .price-card{ border:1px solid var(--border); border-radius:24px; padding:2.5rem; background:var(--bg); position:relative; transition:transform .2s, box-shadow .2s; }
-  .price-card:hover{ transform:translateY(-4px); box-shadow:var(--card-shadow); }
-  .price-card.featured{
-    background:linear-gradient(160deg,var(--accent-deep),var(--accent) 130%); color:#fff; border-color:transparent;
-    box-shadow:var(--card-shadow-lg);
+  .about-text p{color:var(--muted);font-size:1rem;line-height:1.8;margin-top:1.2rem;}
+  .about-text strong{color:var(--text);}
+  .about-card{
+    background:var(--surface);border:1px solid rgba(45,106,79,0.14);
+    border-radius:20px;padding:2rem;
   }
-  .price-badge{ display:inline-block; background:#fff; color:var(--accent-deep); font-size:.65rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; padding:.3rem .8rem; border-radius:100px; margin-bottom:1.5rem; }
-  .price-name{ font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:.75rem; }
-  .price-card.featured .price-name{ color:rgba(255,255,255,.75); }
-  .price-value{ font-size:3.1rem; font-weight:800; letter-spacing:-.02em; line-height:1; margin-bottom:.3rem; font-variant-numeric:tabular-nums; }
-  .price-value .cur{ font-size:1.3rem; vertical-align:top; margin-top:.4rem; display:inline-block; }
-  .price-period{ font-size:.8rem; color:var(--muted); margin-bottom:2rem; }
-  .price-card.featured .price-period{ color:rgba(255,255,255,.7); }
-  .price-features{ list-style:none; margin-bottom:2rem; }
-  .price-features li{ font-size:.875rem; color:var(--muted); padding:.65rem 0; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:.7rem; }
-  .price-card.featured .price-features li{ color:rgba(255,255,255,.88); border-color:rgba(255,255,255,.18); }
-  .price-features li:last-child{ border-bottom:none; }
-  .check-dot{ width:18px;height:18px;border-radius:50%; background:var(--accent-light); color:var(--accent); display:flex;align-items:center;justify-content:center; flex-shrink:0; }
-  .check-dot .icon{ width:11px;height:11px; stroke-width:3; }
-  .price-card.featured .check-dot{ background:rgba(255,255,255,.18); color:#fff; }
-  .price-cta{ width:100%; text-align:center; display:block; padding:.9rem; border-radius:100px; font-weight:700; font-size:.875rem; text-decoration:none; transition:all .2s; }
-  .price-cta.outline{ border:1px solid var(--border); color:var(--ink); }
-  .price-cta.outline:hover{ border-color:var(--accent); color:var(--accent); }
-  .price-cta.solid{ background:#fff; color:var(--accent-deep); }
-  .price-cta.solid:hover{ transform:translateY(-2px); box-shadow:0 12px 24px -8px rgba(0,0,0,.3); }
-  .price-note{ font-size:.82rem; color:var(--muted); margin-top:1.75rem; text-align:center; }
-  .price-note a{ color:var(--accent); font-weight:600; text-decoration:none; }
-  @media (max-width:800px){ .pricing-grid{ grid-template-columns:1fr; } }
-
-  /* ============ FINAL CTA ============ */
-  .final-cta{
-    margin:0 1rem; border-radius:36px; position:relative; overflow:hidden;
-    background:linear-gradient(150deg,var(--accent-deep) 0%,var(--accent) 60%,var(--accent-mid) 130%);
-    padding:6.5rem 2rem; text-align:center; color:#fff;
+  .about-status{
+    display:flex;align-items:center;gap:.5rem;
+    font-family:'DM Mono',monospace;font-size:.72rem;color:var(--accent);
+    letter-spacing:.06em;margin-bottom:1.2rem;
   }
-  .final-cta::before{ content:''; position:absolute; top:-30%; right:-10%; width:60%; padding-bottom:60%; border-radius:50%; background:radial-gradient(circle,rgba(255,255,255,.14),transparent 70%); }
-  .final-cta::after{ content:''; position:absolute; bottom:-30%; left:-10%; width:50%; padding-bottom:50%; border-radius:50%; background:radial-gradient(circle,rgba(255,255,255,.10),transparent 70%); }
-  .final-cta h2{ position:relative; z-index:1; font-size:clamp(2rem,4.6vw,3.4rem); font-weight:800; letter-spacing:-.04em; line-height:1.05; margin-bottom:1.2rem; text-wrap:balance; }
-  .final-cta p{ position:relative; z-index:1; font-size:1.02rem; color:rgba(255,255,255,.85); max-width:38ch; margin:0 auto 2.3rem; line-height:1.65; }
-  .final-actions{ position:relative; z-index:1; display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap; }
-  .fc-link{ display:inline-flex; align-items:center; gap:.5rem; background:#fff; color:var(--accent-deep); padding:1rem 2rem; border-radius:100px; text-decoration:none; font-weight:700; font-size:.95rem; transition:transform .18s, box-shadow .2s; }
-  .fc-link:hover{ transform:translateY(-2px); box-shadow:0 16px 32px -10px rgba(0,0,0,.4); }
-  .fc-link-secondary{ display:inline-flex; align-items:center; gap:.5rem; background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.4); padding:1rem 2rem; border-radius:100px; text-decoration:none; font-weight:700; font-size:.95rem; transition:background .2s, transform .18s; }
-  .fc-link-secondary:hover{ background:rgba(255,255,255,.22); transform:translateY(-2px); }
-  .final-note{ position:relative; z-index:1; font-size:.8rem; color:rgba(255,255,255,.65); margin-top:2rem; }
-
-  /* ============ FOOTER ============ */
-  footer{ padding:2.5rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; max-width:1160px; margin:0 auto; }
-  .footer-copy{ font-size:.8rem; color:var(--muted-2); }
-  .footer-links{ display:flex; gap:1.75rem; flex-wrap:wrap; }
-  .footer-links a{ font-size:.8rem; color:var(--muted-2); text-decoration:none; transition:color .2s; }
-  .footer-links a:hover{ color:var(--ink); }
-  .footer-links a.footer-external{ color:var(--accent); font-weight:600; }
-
-  /* ============ REVEAL ============ */
-  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
-  .reveal.visible{ opacity:1; transform:translateY(0); }
-  @media (prefers-reduced-motion:reduce){
-    .reveal{ opacity:1; transform:none; transition:none; }
-    .mini-node-rail::after, .flow-connector .track::after, .eyebrow .dot, .flow-card-live .dot{ animation:none; }
+  .about-status::before{content:'';width:7px;height:7px;background:var(--accent);border-radius:50%;}
+  .about-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;margin-bottom:.3rem;}
+  .about-role{color:var(--muted);font-size:.875rem;margin-bottom:1.4rem;}
+  .about-link{
+    display:inline-flex;align-items:center;gap:.4rem;
+    font-size:.85rem;color:var(--accent);text-decoration:none;font-weight:500;
   }
+  @media (max-width:840px){ .about{grid-template-columns:1fr;} }
+
+  /* FLOWDESK TEASER */
+  .flowdesk-section{background:var(--surface);}
+  .fd-wrap{
+    display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:2.5rem;
+  }
+  .fd-copy p{color:var(--muted);font-size:1rem;line-height:1.8;margin:1.2rem 0 1.8rem;max-width:42ch;}
+  .fd-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;}
+  .fd-link-secondary{
+    font-size:.875rem;color:var(--text);text-decoration:none;
+    display:inline-flex;align-items:center;gap:.4rem;border-bottom:1px solid var(--border);
+    padding-bottom:2px;transition:border-color .2s,color .2s;
+  }
+  .fd-link-secondary:hover{color:var(--accent);border-color:var(--accent);}
+  .browser-frame{
+    border-radius:16px;overflow:hidden;
+    border:1px solid rgba(27,42,34,0.15);
+    box-shadow:0 24px 60px rgba(27,42,34,0.14);
+    background:#0c0f0a;
+  }
+  .browser-bar{
+    display:flex;align-items:center;gap:6px;
+    padding:.6rem .8rem;background:#161a13;
+  }
+  .browser-dot{width:8px;height:8px;border-radius:50%;background:#3a4235;}
+  .browser-frame img{width:100%;display:block;}
+  @media (max-width:840px){ .fd-wrap{grid-template-columns:1fr;} .fd-copy{order:2;} }
+
+  /* CTA */
+  .cta-section{
+    text-align:center;padding:6rem 2.5rem;
+    background:var(--surface);color:var(--text);
+    border-top:1px solid rgba(45,106,79,0.14);
+  }
+  .cta-section h2{
+    font-family:'Syne',sans-serif;font-weight:800;
+    font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:-0.03em;margin-bottom:1rem;
+  }
+  .cta-section h2 em{font-style:normal;color:var(--accent);}
+  .cta-section p{color:var(--muted);max-width:40ch;margin:0 auto 2.2rem;font-size:1rem;line-height:1.7;}
+  .cta-section .btn-primary{background:var(--accent);color:#fff;}
+  .cta-section .btn-primary:hover{background:var(--accent-dark);}
+  .cta-meta{margin-top:1.4rem;font-family:'DM Mono',monospace;font-size:.75rem;color:var(--muted);}
+
+  /* FOOTER */
+  footer{
+    padding:2.2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:1rem;border-top:1px solid var(--border-soft);
+    font-size:.8rem;color:var(--muted);
+  }
+  .footer-links{display:flex;gap:1.6rem;flex-wrap:wrap;}
+  .footer-links a{text-decoration:none;color:var(--muted);transition:color .2s;}
+  .footer-links a:hover{color:var(--text);}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
 </style>
 </head>
 <body>
 
-<div class="nav-wrap">
 <nav id="nav">
-  <a href="#" class="nav-logo">
-    <span class="nav-logo-mark">fd</span>
-    <span class="nav-logo-text">Michal <span>Sajko</span></span>
+  <a href="#" class="logo">
+    <span class="logo-mark">f<span>d</span></span>
+    Michal Sajko
   </a>
   <ul class="nav-links">
-    <li><a href="#sluzba">FlowDesk</a></li>
-    <li><a href="#ceny">Ceny</a></li>
-    <li><a href="https://flow-desk.michalsajko.sk/" target="_blank" rel="noopener" class="nav-external">Web FlowDesk
-      <svg class="icon" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-    </a></li>
+    <li><a href="#o-mne">O mne</a></li>
+    <li><a href="#flowdesk">FlowDesk</a></li>
+    <li><a href="https://flow-desk.michalsajko.sk/case-study">Case study</a></li>
   </ul>
-  <div class="nav-right">
-    <a href="https://flow-desk.michalsajko.sk/" target="_blank" rel="noopener" class="btn btn-ghost-pill">Pozrieť FlowDesk</a>
-    <a href="https://flow-desk.michalsajko.sk/" class="btn btn-solid-pill">Napísať mi</a>
-  </div>
+  <a class="nav-cta" href="https://onboarding.michalsajko.sk/">Dohodnúť hovor</a>
 </nav>
-</div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-blobs"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
-  <div class="hero-inner">
-    <div>
-      <div class="eyebrow"><span class="dot"></span>IT Konzultant · Workflow Automation</div>
-      <h1>Procesy, ktoré<br /><span class="grad">fungujú</span><br />bez vás.</h1>
-      <p class="hero-sub">Prepojím váš formulár, task manager a firemný chat do jedného automatizovaného systému. Jednorazovo, bez mesačných poplatkov.</p>
-      <div class="hero-actions">
-        <a href="https://onboarding.michalsajko.sk/" class="btn btn-primary">
-          Dohodnúť hovor zadarmo
-          <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#sluzba" class="btn-text">Ako to funguje</a>
-      </div>
-      <div class="trust-row">
-        <span class="trust-row-label">Skúsenosti naprieč odvetviami:</span>
-        <span class="trust-pill">E-commerce</span>
-        <span class="trust-pill">Software house</span>
-        <span class="trust-pill">Štátna správa</span>
-      </div>
-    </div>
+  <div class="grid-bg"></div>
+  <div class="eyebrow">IT konzultant · Workflow Automation</div>
+  <h1>Procesy, ktoré <em>fungujú</em> bez vás.</h1>
+  <p class="hero-sub">Prepojím váš formulár, task manager a firemný chat do jedného automatizovaného systému. Jednorazovo, bez mesačných poplatkov.</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="https://onboarding.michalsajko.sk/">Dohodnúť hovor zadarmo →</a>
+    <a class="btn-ghost" href="#flowdesk">Ako to funguje</a>
+  </div>
+  <div class="hero-note">30 min hovor zadarmo · nastavenie do 5 dní</div>
+  <div class="sectors">
+    <span>E-commerce</span><span>Fintech</span><span>Štátna správa</span><span>SaaS</span>
+  </div>
+</section>
 
-    <div class="hero-visual">
-      <div class="flow-card">
-        <div class="flow-card-head">
-          <span class="flow-card-title">Automatizovaný flow</span>
-          <span class="flow-card-live"><span class="dot"></span>Live</span>
-        </div>
-        <div class="mini-flow">
-          <div class="mini-node">
-            <div class="mini-node-rail"></div>
-            <div class="mini-node-badge"><svg class="icon" viewBox="0 0 24 24" stroke="#fff"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
-            <div><div class="mini-node-text-title">Formulár prijatý</div><div class="mini-node-text-sub">Google Forms · Jira · Typeform</div></div>
-          </div>
-          <div class="mini-node">
-            <div class="mini-node-rail"></div>
-            <div class="mini-node-badge"><svg class="icon" viewBox="0 0 24 24" stroke="#fff"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="10" rx="1.5"/></svg></div>
-            <div><div class="mini-node-text-title">Úloha vytvorená</div><div class="mini-node-text-sub">Trello · Jira · ClickUp</div></div>
-          </div>
-          <div class="mini-node">
-            <div class="mini-node-rail"></div>
-            <div class="mini-node-badge"><svg class="icon" viewBox="0 0 24 24" stroke="#fff"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-            <div><div class="mini-node-text-title">Tím notifikovaný</div><div class="mini-node-text-sub">Slack · Google Chat · Email</div></div>
-          </div>
-          <div class="mini-node">
-            <div class="mini-node-badge"><svg class="icon" viewBox="0 0 24 24" stroke="#fff"><path d="M9 10l-5 5 5 5"/><path d="M20 4v7a4 4 0 0 1-4 4H4"/></svg></div>
-            <div><div class="mini-node-text-title">Update do vlákna</div><div class="mini-node-text-sub">Automaticky, bez kliknutia</div></div>
-          </div>
+<!-- ABOUT -->
+<section class="section reveal" id="o-mne">
+  <div class="about">
+    <div class="about-text">
+      <div class="section-label">Kto som</div>
+      <h2 class="section-title">7+ rokov v digitálnych produktoch a procesnej automatizácii.</h2>
+      <p>IT projektový manažér so skúsenosťami z <strong>digitalizácie verejnej správy</strong>, e-commerce platforiem, software house a fintech aplikácií. Poznám procesy malých aj veľkých tímov — a viem, kde presne vznikajú straty času.</p>
+      <p>Dnes túto skúsenosť ponúkam malým firmám cez <strong>FlowDesk</strong> — jednorazovú implementáciu automatizácie, po ktorej systém funguje úplne samostatne, bez závislosti odo mňa.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-status">Voľný termín</div>
+      <div class="about-name">Michal Sajko</div>
+      <div class="about-role">IT Project Manager & Workflow Automation</div>
+      <a class="about-link" href="https://www.linkedin.com/in/michal-sajko-624979176/">Viac info na LinkedIne →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FLOWDESK TEASER -->
+<section class="flowdesk-section reveal" id="flowdesk">
+  <div class="section">
+    <div class="section-label">Moja služba</div>
+    <h2 class="section-title">FlowDesk — koniec chaosu v komunikácii tímu.</h2>
+    <div class="fd-wrap">
+      <div class="fd-copy">
+        <p>Prepojím váš formulár, task manager a chat do jedného automatizovaného systému. Každá požiadavka sa automaticky stane úlohou a tím o nej okamžite dostane notifikáciu — bez ručného kopírovania a bez strateného kontextu.</p>
+        <div class="fd-actions">
+          <a class="btn-primary" href="https://flow-desk.michalsajko.sk/">Pozrieť FlowDesk →</a>
+          <a class="fd-link-secondary" href="https://flow-desk.michalsajko.sk/case-study">Čítať case study</a>
         </div>
       </div>
-      <div class="status-card">
-        <div class="status-avatar">MS</div>
-        <div><div class="status-card-name">Michal Sajko</div><div class="status-card-role">● Voľný termín</div></div>
+      <div class="browser-frame">
+        <div class="browser-bar">
+          <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+        </div>
+        <img src="flowdeskhero.png" alt="FlowDesk — Formulár → Úloha → Notifikácia" />
       </div>
     </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- O MNE (mini) -->
-<section class="mini-about" id="o-mne">
-  <div class="mini-about-inner reveal">
-    <div class="mini-about-badge">MS</div>
-    <div class="mini-about-body">
-      <p>IT projektový manažér s <strong>viac ako 7 rokmi skúseností</strong> v oblasti vývoja digitálnych produktov, interných systémov a procesnej automatizácie.</p>
-      <p>Skúsenosti na projektoch v rámci Digitalizácie verejnej správy, e-commerce platformy, software house, fintech aplikácie.</p>
-      <a href="https://www.linkedin.com/in/michal-sajko-624979176/" target="_blank" rel="noopener" class="btn-text">Viac info na LinkedIne
-        <svg class="icon" viewBox="0 0 24 24" style="width:14px;height:14px;"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FLOWDESK -->
-<section class="section" id="sluzba" style="padding:5.5rem 1.5rem;">
-<div class="service-section">
-    <div class="service-head">
-      <div>
-        <div class="label">Moja služba</div>
-        <h2 class="section-title"><a href="https://flow-desk.michalsajko.sk//" target="_blank" rel="noopener" class="flowdesk-link">FlowDesk<svg class="icon" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a> — koniec chaosu v komunikácii tímu.</h2>
-        <p class="section-sub">Prepojím váš formulár, task manager a chat do jedného automatizovaného systému. Požiadavky sa už nestrácajú — každá je evidovaná, priradená a sledovaná.</p>
-      </div>
-    </div>
-
-    <div class="flow-row reveal">
-      <div class="flow-node">
-        <div class="flow-node-badge"><svg class="icon" viewBox="0 0 24 24" stroke="#fff"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
-        <div class="flow-node-label">Krok 1</div>
-        <div class="flow-node-title">eFormulár</div>
-        <div class="flow-node-ex">Google Forms · Jira · Typeform</div>
-      </div>
-      <div class="flow-connector"><div class="track"></div></div>
-      <div class="flow-node">
-        <div class="flow-node-badge"><svg class="icon" viewBox="0 0 24 24" stroke="#fff"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="10" rx="1.5"/></svg></div>
-        <div class="flow-node-label">Krok 2</div>
-        <div class="flow-node-title">Task Manager</div>
-        <div class="flow-node-ex">Trello · Jira · ClickUp</div>
-      </div>
-      <div class="flow-connector"><div class="track"></div></div>
-      <div class="flow-node">
-        <div class="flow-node-badge"><svg class="icon" viewBox="0 0 24 24" stroke="#fff"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-        <div class="flow-node-label">Krok 3</div>
-        <div class="flow-node-title">Notifikácia</div>
-        <div class="flow-node-ex">Slack · Google Chat · Email</div>
-      </div>
-      <div class="flow-connector"><div class="track"></div></div>
-      <div class="flow-node">
-        <div class="flow-node-badge"><svg class="icon" viewBox="0 0 24 24" stroke="#fff"><path d="M9 10l-5 5 5 5"/><path d="M20 4v7a4 4 0 0 1-4 4H4"/></svg></div>
-        <div class="flow-node-label">Krok 4</div>
-        <div class="flow-node-title">Thread reply</div>
-        <div class="flow-node-ex">Update ide do vlákna</div>
-      </div>
-    </div>
-
-    <div class="cta-band reveal">
-      <div class="cta-band-text">
-        <div class="cta-band-title">Chcete vidieť FlowDesk detailne?</div>
-        <div class="cta-band-sub">Kompletná ponuka, use-cases a interaktívne demo na samostatnom webe.</div>
-      </div>
-      <a href="https://flow-desk.michalsajko.sk/" target="_blank" rel="noopener" class="cta-band-btn">
-        Otvoriť web FlowDesk
-        <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-
-    <a href="https://flow-desk.michalsajko.sk/" target="_blank" rel="noopener" class="demo-frame reveal" style="text-decoration:none;">
-      <div class="demo-frame-bar">
-        <span class="d"></span><span class="d"></span><span class="d g"></span>
-        <span class="demo-frame-url">flow-desk.michalsajko.sk/</span>
-      </div>
-      <div class="demo-frame-media">
-        <iframe src="https://www.loom.com/embed/be4f62d6d7454d858feb799e3a4b7e2c" loading="lazy" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </a>
-    <p class="demo-note">Živé demo si vyskúšate priamo na <a href="https://flow-desk.michalsajko.sk/" target="_blank" rel="noopener">webe FlowDesk →</a></p>
-
-    <div class="usecase-grid reveal">
-      <div class="usecase-card">
-        <div class="usecase-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg></div>
-        <div class="usecase-title">Incident Management</div>
-        <div class="usecase-desc">Okamžité hlásenie a sledovanie incidentov. IT tímy, e-shopy, SaaS firmy.</div>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v3h6V3M9 12l2 2 4-4"/></svg></div>
-        <div class="usecase-title">SLA Tracking</div>
-        <div class="usecase-desc">Požiadavky zákazníkov s jasnými stavmi, prioritami a zodpovednosťou.</div>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg></div>
-        <div class="usecase-title">Interné úlohy</div>
-        <div class="usecase-desc">Tím si navzájom zadáva úlohy cez formulár — všetko evidované, nič sa nestratí.</div>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M17 20h5v-2a4 4 0 0 0-3-3.87M9 20H4v-2a4 4 0 0 1 3-3.87M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM21 7a4 4 0 0 1-3 3.87"/></svg></div>
-        <div class="usecase-title">Externá spolupráca</div>
-        <div class="usecase-desc">Partneri a zákazníci posielajú požiadavky cez formulár priamo do vášho systému.</div>
-      </div>
-    </div>
-
-    <div class="footer-link-center reveal">
-      <a href="https://flow-desk.michalsajko.sk/" target="_blank" rel="noopener">Celá ponuka FlowDesk na samostatnom webe
-        <svg class="icon" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-      </a>
-    </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- AKO TO FUNGUJE -->
-<section class="section" id="proces">
-  <div class="section-inner">
-    <div class="label">Proces</div>
-    <h2 class="section-title">Nastavíme, odovzdáme, odídeme.</h2>
-
-    <div class="timeline reveal">
-      <div class="tl-item">
-        <div class="tl-badge"><svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <div class="tl-step">Krok 01</div>
-        <div class="tl-title">Úvodný hovor (zadarmo)</div>
-        <p class="tl-text">30 minút bez záväzkov. Zistíme, čo potrebujete a navrhneme riešenie na mieru.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-badge"><svg class="icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <div class="tl-step">Krok 02</div>
-        <div class="tl-title">Implementácia</div>
-        <p class="tl-text">Nastavím celý systém priamo na vašich účtoch pomocou no-code automatizačných nástrojov — 3 až 5 pracovných dní.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-badge"><svg class="icon" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg></div>
-        <div class="tl-step">Krok 03</div>
-        <div class="tl-title">Odovzdanie a zaškolenie</div>
-        <p class="tl-text">Funkčný systém + písomný manuál + tréning pre váš tím. Viete sami upraviť čokoľvek.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-badge"><svg class="icon" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
-        <div class="tl-step">Krok 04</div>
-        <div class="tl-title">Idete sami</div>
-        <p class="tl-text">Systém je váš. Funguje bez mojej asistencie. Ad hoc konzultácie dostupné na požiadanie.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- CENY -->
-<section class="section" id="ceny">
-  <div class="section-inner">
-    <div class="label">Ceny</div>
-    <h2 class="section-title">Jednorazová platba. Žiadne skryté poplatky.</h2>
-
-    <div class="pricing-grid reveal">
-      <div class="price-card">
-        <div class="price-name">Starter</div>
-        <div class="price-value"><span class="cur">€</span>490</div>
-        <div class="price-period">jednorazovo · bez DPH</div>
-        <ul class="price-features">
-          <li><span class="check-dot"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>1 automatizovaný flow</li>
-          <li><span class="check-dot"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>Prepojenie 2–3 nástrojov</li>
-          <li><span class="check-dot"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>Základná dokumentácia</li>
-          <li><span class="check-dot"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>Zaškolenie (1 hodina)</li>
-        </ul>
-        <a href="https://onboarding.michalsajko.sk/" class="price-cta outline">Dohodnúť hovor</a>
-      </div>
-
-      <div class="price-card featured">
-        <div class="price-badge">Najpopulárnejší</div>
-        <div class="price-name">Growth</div>
-        <div class="price-value"><span class="cur">€</span>990</div>
-        <div class="price-period">jednorazovo · bez DPH</div>
-        <ul class="price-features">
-          <li><span class="check-dot"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>Až 3 automatizované flows</li>
-          <li><span class="check-dot"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>Prepojenie 3–5 nástrojov</li>
-          <li><span class="check-dot"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>Kompletná dokumentácia</li>
-          <li><span class="check-dot"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>Zaškolenie tímu (2 hodiny)</li>
-        </ul>
-        <a href="https://onboarding.michalsajko.sk/" class="price-cta solid">Dohodnúť hovor zadarmo</a>
-      </div>
-    </div>
-
-    <p class="price-note">Väčší projekt alebo špecifické požiadavky? <a href="https://onboarding.michalsajko.sk/">Dohodneme cenu individuálne →</a></p>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="section">
-<div class="final-cta">
-  <h2>Prvý hovor<br /><em style="font-style:normal;color:#eafff2;">zadarmo.</em></h2>
+<section class="cta-section">
+  <h2>Prvý hovor <em>zadarmo.</em></h2>
   <p>30 minút, bez záväzkov. Zistíme, či a ako vám vieme pomôcť.</p>
-  <div class="final-actions">
-    <a href="https://onboarding.michalsajko.sk/" class="fc-link">Napísať mi
-      <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-    <a href="https://flow-desk.michalsajko.sk/" target="_blank" rel="noopener" class="fc-link-secondary">Pozrieť web FlowDesk
-      <svg class="icon" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-    </a>
-  </div>
-  <p class="final-note">Odpovedám do 24 hodín · michal.sajko@gmail.com · +421 914 703 355</p>
-</div>
+  <a class="btn-primary" href="https://onboarding.michalsajko.sk/">Napísať mi →</a>
+  <div class="cta-meta">Odpovedám do 24 hodín · michal.sajko@gmail.com · +421 914 703 355</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-copy">© 2026 Michal Sajko. Všetky práva vyhradené.</span>
+  <span>© 2026 Michal Sajko. Všetky práva vyhradené.</span>
   <div class="footer-links">
-    <a href="https://flow-desk.michalsajko.sk/" target="_blank" rel="noopener" class="footer-external">Web FlowDesk ↗</a>
+    <a href="https://flow-desk.michalsajko.sk/">Web FlowDesk ↗</a>
     <a href="mailto:michal.sajko@gmail.com">Email</a>
     <a href="tel:+421914703355">+421 914 703 355</a>
-    <a href="https://www.linkedin.com/in/michal-sajko-624979176/" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/michal-sajko-624979176/">LinkedIn</a>
   </div>
 </footer>
 
 <script>
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30));
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  });
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.12 });
   reveals.forEach(el => io.observe(el));
 </script>
 </body>
