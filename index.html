@@ -13,344 +13,348 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Michal Sajko — IT Project Manager & Workflow Automation" />
 <meta name="twitter:description" content="FlowDesk prepojí formulár, task manager a chat do jedného automatizovaného systému." />
-<meta name="theme-color" content="#2d6a4f" />
+<meta name="theme-color" content="#a3e635" />
 <link rel="canonical" href="https://michalsajko.sk/" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='white'/%3E%3Ctext x='50%25' y='58%25' font-family='Syne, sans-serif' font-weight='800' font-size='46' text-anchor='middle'%3E%3Ctspan fill='%231b2a22'%3Ef%3C/tspan%3E%3Ctspan fill='%232d6a4f'%3Ed%3C/tspan%3E%3C/text%3E%3C/svg%3E" />
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='white'/%3E%3Ctext x='50%25' y='58%25' font-family='Syne, sans-serif' font-weight='800' font-size='46' text-anchor='middle'%3E%3Ctspan fill='%231b2a22'%3Ef%3C/tspan%3E%3Ctspan fill='%232d6a4f'%3Ed%3C/tspan%3E%3C/text%3E%3C/svg%3E" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='white'/%3E%3Ctext x='50%25' y='58%25' font-family='Syne, sans-serif' font-weight='800' font-size='46' text-anchor='middle'%3E%3Ctspan fill='%23141a0d'%3Ef%3C/tspan%3E%3Ctspan fill='%2365a30d'%3Ed%3C/tspan%3E%3C/text%3E%3C/svg%3E" />
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='white'/%3E%3Ctext x='50%25' y='58%25' font-family='Syne, sans-serif' font-weight='800' font-size='46' text-anchor='middle'%3E%3Ctspan fill='%23141a0d'%3Ef%3C/tspan%3E%3Ctspan fill='%2365a30d'%3Ed%3C/tspan%3E%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#ffffff;
-    --surface:#eef5f1;
-    --accent:#2d6a4f;
-    --accent-dark:#1e4d38;
-    --text:#1b2a22;
-    --muted:#5c6b62;
-    --border:rgba(27,42,34,0.12);
-    --border-soft:rgba(27,42,34,0.07);
+    --bg:#fcfdf6;
+    --bg-soft:#f4f9e2;
+    --ink:#141a0d;
+    --muted:#616a54;
+    --line:#e6edd3;
+    --lime:#a3e635;
+    --lime-dark:#65a30d;
+    --lime-deep:#3f6212;
+    --lime-light:#ecfccb;
+    --lime-wash:#f6fce6;
+    --card:#ffffff;
+    --shadow:0 24px 50px -28px rgba(63,98,18,.38);
+    --pattern-opacity:.5;
   }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+      --bg:#0f1309;
+      --bg-soft:#141a0d;
+      --ink:#f2f8e4;
+      --muted:#a3ad8e;
+      --line:#232b16;
+      --lime:#c2f04d;
+      --lime-dark:#a3e635;
+      --lime-deep:#d9f99d;
+      --lime-light:#1c2410;
+      --lime-wash:#171e0d;
+      --card:#161c0e;
+      --shadow:0 24px 50px -28px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f1309;--bg-soft:#141a0d;--ink:#f2f8e4;--muted:#a3ad8e;--line:#232b16;
+    --lime:#c2f04d;--lime-dark:#a3e635;--lime-deep:#d9f99d;--lime-light:#1c2410;
+    --lime-wash:#171e0d;--card:#161c0e;--shadow:0 24px 50px -28px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'DM Sans',sans-serif;
-    font-weight:400;
-    line-height:1.5;
-    overflow-x:hidden;
+    background:var(--bg);color:var(--ink);
+    font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
   a{color:inherit;}
   img{display:block;max-width:100%;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+  .mono{font-family:'DM Mono',monospace;}
 
-  /* subtle grid texture behind hero */
-  .grid-bg{
-    position:absolute;inset:0;
-    background-image:
-      linear-gradient(rgba(45,106,79,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(45,106,79,0.05) 1px, transparent 1px);
-    background-size:48px 48px;
-    mask-image:radial-gradient(ellipse 75% 65% at 50% 30%, black 20%, transparent 80%);
-    pointer-events:none;
+  /* header */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
   }
-
-  /* NAV */
-  nav{
-    position:sticky;top:0;z-index:100;
+  .head-inner{
+    max-width:1120px;margin:0 auto;padding:16px 28px;
     display:flex;align-items:center;justify-content:space-between;
-    padding:1.1rem 2.5rem;
-    background:rgba(255,255,255,0.88);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid transparent;
-    transition:border-color .25s;
   }
-  nav.scrolled{border-color:var(--border);}
-  .logo{
-    display:flex;align-items:center;gap:.6rem;
-    font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;
-    text-decoration:none;color:var(--text);letter-spacing:-0.01em;
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:16.5px;text-decoration:none;}
+  .logo .mark{
+    width:28px;height:28px;border-radius:9px;background:var(--lime);color:var(--lime-deep);
+    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;
+    font-family:'DM Mono',monospace;
   }
-  .logo-mark{
-    width:30px;height:30px;border-radius:8px;
-    background:var(--text);
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Syne',sans-serif;font-weight:800;font-size:.8rem;
-    color:#fff;flex-shrink:0;
+  nav{display:flex;align-items:center;gap:26px;font-size:14px;color:var(--muted);}
+  nav a{text-decoration:none;transition:color .15s;}
+  nav a:hover{color:var(--ink);}
+  .btn{
+    display:inline-flex;align-items:center;gap:7px;
+    padding:10px 18px;border-radius:99px;font-size:13.5px;font-weight:600;
+    text-decoration:none;white-space:nowrap;transition:transform .15s,filter .15s;
   }
-  .logo-mark span{color:var(--accent);}
-  .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
-  .nav-links a{
-    font-size:.875rem;color:var(--muted);text-decoration:none;
-    transition:color .2s;
-  }
-  .nav-links a:hover{color:var(--text);}
-  .nav-cta{
-    background:var(--accent);color:#fff;border:none;
-    padding:.65rem 1.4rem;border-radius:100px;
-    font-family:'DM Sans',sans-serif;font-weight:600;font-size:.85rem;
-    cursor:pointer;text-decoration:none;display:inline-block;
-    transition:background .2s, transform .15s;
-  }
-  .nav-cta:hover{background:var(--accent-dark);transform:translateY(-1px);}
-  @media (max-width:840px){ .nav-links{display:none;} nav{padding:1rem 1.4rem;} }
+  .btn-solid{background:var(--lime);color:var(--lime-deep);}
+  .btn-solid:hover{transform:translateY(-1px);filter:brightness(1.04);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line);}
+  .btn-ghost:hover{background:var(--bg-soft);transform:translateY(-1px);}
+  .nav-cta{display:none;}
+  @media(min-width:760px){.nav-cta{display:inline-flex;}}
 
-  /* HERO */
-  .hero{
-    position:relative;
-    padding:6rem 2.5rem 4.5rem;
-    text-align:center;
-    overflow:hidden;
-  }
+  /* section rhythm */
+  section{padding:72px 28px;}
   .eyebrow{
-    display:inline-flex;align-items:center;gap:.5rem;
-    font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--accent);
-    background:var(--surface);border:1px solid rgba(45,106,79,0.18);
-    border-radius:100px;padding:.4rem 1rem;margin-bottom:1.6rem;
-    position:relative;z-index:2;
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.02em;color:var(--lime-deep);
+    background:var(--lime-wash);border:1px solid var(--lime-light);
+    padding:6px 13px;border-radius:99px;margin-bottom:20px;
   }
-  .eyebrow::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;}
-  h1{
-    position:relative;z-index:2;
-    font-family:'Syne',sans-serif;font-weight:800;
-    font-size:clamp(2.4rem,5.5vw,4.4rem);
-    line-height:1.03;letter-spacing:-0.03em;
-    max-width:16ch;margin:0 auto 1.4rem;
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--lime-dark);}
+  h1,h2{font-family:'Syne',sans-serif;font-weight:700;letter-spacing:-0.02em;margin:0;}
+  .accent{color:var(--lime-deep);font-style:italic;}
+
+  /* hero */
+  .hero{position:relative;padding-top:64px;overflow:hidden;}
+  .glow{
+    position:absolute;border-radius:50%;
+    background:radial-gradient(circle at center, var(--lime) 0%, rgba(163,230,53,0) 70%);
+    opacity:.3;filter:blur(6px);pointer-events:none;z-index:0;
   }
-  h1 em{font-style:normal;color:var(--accent);}
-  .hero-sub{
-    position:relative;z-index:2;
-    max-width:46ch;margin:0 auto 2.4rem;
-    font-size:1.05rem;color:var(--muted);line-height:1.7;
-  }
-  .hero-actions{
-    position:relative;z-index:2;
-    display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;
-  }
-  .btn-primary{
-    background:var(--accent);color:#fff;border:none;
-    padding:.95rem 2rem;border-radius:100px;
-    font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;
-    text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;
-    transition:background .2s, transform .15s;
-  }
-  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px);}
-  .btn-ghost{
-    color:var(--text);border:1px solid var(--border);
-    padding:.95rem 1.8rem;border-radius:100px;
-    font-size:.9rem;text-decoration:none;
-    transition:border-color .2s, background .2s;
-  }
-  .btn-ghost:hover{border-color:var(--accent);background:var(--surface);}
-  .hero-note{
-    position:relative;z-index:2;
-    font-family:'DM Mono',monospace;font-size:.72rem;color:var(--muted);
-    letter-spacing:.04em;
+  .glow-1{top:-260px;right:-220px;width:640px;height:640px;}
+  .hero-grid{position:relative;z-index:1;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:44px;align-items:center;}
+  @media(min-width:960px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:36px;}}
+  h1.hero-h{font-size:clamp(34px,5.2vw,52px);line-height:1.1;max-width:13ch;margin-bottom:20px;}
+  .lede{font-size:17px;line-height:1.65;color:var(--muted);max-width:46ch;margin:0 0 28px;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:16px;}
+  .fine{font-family:'DM Mono',monospace;font-size:12.5px;color:var(--muted);margin:0 0 30px;}
+  .badges{display:flex;flex-wrap:wrap;gap:9px;}
+  .badge{
+    font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);
+    border:1px solid var(--line);padding:6px 12px;border-radius:8px;background:var(--bg-soft);
   }
   .sectors{
-    position:relative;z-index:2;
-    margin-top:3.2rem;padding-top:1.6rem;border-top:1px solid var(--border-soft);
-    display:flex;justify-content:center;gap:2.2rem;flex-wrap:wrap;
-    font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--muted);max-width:640px;margin-left:auto;margin-right:auto;
+    display:flex;flex-wrap:wrap;gap:9px;margin-top:6px;
   }
 
-  /* SECTION SHELL */
-  .section{padding:5.5rem 2.5rem;max-width:1080px;margin:0 auto;}
-  .section-label{
-    display:inline-flex;align-items:center;gap:.5rem;
-    font-family:'DM Mono',monospace;font-size:.72rem;text-transform:uppercase;
-    letter-spacing:.12em;color:var(--accent);margin-bottom:1rem;
+  /* flow card (mirrors flow-desk.michalsajko.sk hero) */
+  .flowcard{
+    position:relative;background:var(--card);border:1px solid var(--line);
+    border-radius:22px;padding:22px 22px 20px;box-shadow:var(--shadow);
   }
-  .section-title{
-    font-family:'Syne',sans-serif;font-weight:700;
-    font-size:clamp(1.7rem,3.4vw,2.4rem);letter-spacing:-0.02em;
-    line-height:1.15;max-width:22ch;
-  }
+  .flowcard-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+  .flowcard-head .t{font-size:13px;color:var(--muted);}
+  .live{display:flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11.5px;color:var(--lime-deep);font-weight:600;}
+  .live .p{width:7px;height:7px;border-radius:50%;background:var(--lime-dark);animation:p 1.8s ease-in-out infinite;}
+  @keyframes p{0%,100%{box-shadow:0 0 0 0 rgba(163,230,53,.55);}50%{box-shadow:0 0 0 6px rgba(163,230,53,0);}}
 
-  /* ABOUT */
-  .about{
-    display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center;
-  }
-  .about-text p{color:var(--muted);font-size:1rem;line-height:1.8;margin-top:1.2rem;}
-  .about-text strong{color:var(--text);}
-  .about-card{
-    background:var(--surface);border:1px solid rgba(45,106,79,0.14);
-    border-radius:20px;padding:2rem;
-  }
-  .about-status{
-    display:flex;align-items:center;gap:.5rem;
-    font-family:'DM Mono',monospace;font-size:.72rem;color:var(--accent);
-    letter-spacing:.06em;margin-bottom:1.2rem;
-  }
-  .about-status::before{content:'';width:7px;height:7px;background:var(--accent);border-radius:50%;}
-  .about-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;margin-bottom:.3rem;}
-  .about-role{color:var(--muted);font-size:.875rem;margin-bottom:1.4rem;}
-  .about-link{
-    display:inline-flex;align-items:center;gap:.4rem;
-    font-size:.85rem;color:var(--accent);text-decoration:none;font-weight:500;
-  }
-  @media (max-width:840px){ .about{grid-template-columns:1fr;} }
+  .flow{position:relative;}
+  .track{position:absolute;left:22px;top:12px;bottom:12px;width:2px;background:var(--line);overflow:hidden;}
+  .track::after{content:"";position:absolute;left:0;top:-60%;width:100%;height:55%;
+    background:linear-gradient(to bottom, transparent, var(--lime-dark) 55%, transparent);
+    animation:fd 3.2s linear infinite;}
+  @keyframes fd{0%{transform:translateY(-100%);}100%{transform:translateY(300%);}}
+  .frow{position:relative;display:flex;align-items:center;gap:13px;padding:11px 4px;}
+  .fic{flex:none;width:44px;height:44px;border-radius:12px;background:var(--bg-soft);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;color:var(--lime-deep);}
+  .flabel{font-size:14px;font-weight:600;}
+  .fsub{font-size:12px;color:var(--muted);}
 
-  /* FLOWDESK TEASER */
-  .flowdesk-section{background:var(--surface);}
-  .fd-wrap{
-    display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:2.5rem;
-  }
-  .fd-copy p{color:var(--muted);font-size:1rem;line-height:1.8;margin:1.2rem 0 1.8rem;max-width:42ch;}
-  .fd-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;}
-  .fd-link-secondary{
-    font-size:.875rem;color:var(--text);text-decoration:none;
-    display:inline-flex;align-items:center;gap:.4rem;border-bottom:1px solid var(--border);
-    padding-bottom:2px;transition:border-color .2s,color .2s;
-  }
-  .fd-link-secondary:hover{color:var(--accent);border-color:var(--accent);}
-  .browser-frame{
-    border-radius:16px;overflow:hidden;
-    border:1px solid rgba(27,42,34,0.15);
-    box-shadow:0 24px 60px rgba(27,42,34,0.14);
-    background:#0c0f0a;
-  }
-  .browser-bar{
-    display:flex;align-items:center;gap:6px;
-    padding:.6rem .8rem;background:#161a13;
-  }
-  .browser-dot{width:8px;height:8px;border-radius:50%;background:#3a4235;}
-  .browser-frame img{width:100%;display:block;}
-  @media (max-width:840px){ .fd-wrap{grid-template-columns:1fr;} .fd-copy{order:2;} }
+  .toolstrip{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:7px;}
+  .tool{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);background:var(--bg-soft);
+    border:1px solid var(--line);padding:4px 9px;border-radius:7px;}
 
-  /* CTA */
-  .cta-section{
-    text-align:center;padding:6rem 2.5rem;
-    background:var(--surface);color:var(--text);
-    border-top:1px solid rgba(45,106,79,0.14);
-  }
-  .cta-section h2{
-    font-family:'Syne',sans-serif;font-weight:800;
-    font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:-0.03em;margin-bottom:1rem;
-  }
-  .cta-section h2 em{font-style:normal;color:var(--accent);}
-  .cta-section p{color:var(--muted);max-width:40ch;margin:0 auto 2.2rem;font-size:1rem;line-height:1.7;}
-  .cta-section .btn-primary{background:var(--accent);color:#fff;}
-  .cta-section .btn-primary:hover{background:var(--accent-dark);}
-  .cta-meta{margin-top:1.4rem;font-family:'DM Mono',monospace;font-size:.75rem;color:var(--muted);}
+  /* kto som */
+  .split{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px;}
+  @media(min-width:920px){.split{grid-template-columns:1.1fr .9fr;gap:50px;align-items:start;}}
+  .h2-sec{font-size:clamp(24px,3.2vw,34px);line-height:1.22;max-width:16ch;margin-bottom:18px;}
+  .body-p{font-size:16px;line-height:1.7;color:var(--muted);max-width:52ch;}
+  .body-p b{color:var(--ink);font-weight:600;}
+  .body-p + .body-p{margin-top:16px;}
 
-  /* FOOTER */
-  footer{
-    padding:2.2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;
-    flex-wrap:wrap;gap:1rem;border-top:1px solid var(--border-soft);
-    font-size:.8rem;color:var(--muted);
-  }
-  .footer-links{display:flex;gap:1.6rem;flex-wrap:wrap;}
-  .footer-links a{text-decoration:none;color:var(--muted);transition:color .2s;}
-  .footer-links a:hover{color:var(--text);}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow);}
+  .avail{display:inline-flex;align-items:center;gap:7px;font-family:'DM Mono',monospace;font-size:11.5px;
+    color:var(--lime-deep);background:var(--lime-wash);border:1px solid var(--lime-light);
+    padding:5px 11px;border-radius:99px;margin-bottom:18px;}
+  .avail .p{width:6px;height:6px;border-radius:50%;background:var(--lime-dark);animation:p 1.8s ease-in-out infinite;}
+  .avatar{width:52px;height:52px;border-radius:14px;background:var(--lime);color:var(--lime-deep);
+    display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:18px;margin-bottom:14px;}
+  .name{font-family:'Syne',sans-serif;font-weight:700;font-size:19px;margin-bottom:3px;}
+  .role{font-size:13.5px;color:var(--muted);margin-bottom:18px;}
+  .li-link{font-size:13.5px;font-weight:600;text-decoration:none;color:var(--lime-deep);}
 
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease;}
-  .reveal.visible{opacity:1;transform:translateY(0);}
+  /* moja sluzba */
+  .service{background:var(--bg-soft);}
+  .svc-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:44px;align-items:center;}
+  @media(min-width:960px){.svc-grid{grid-template-columns:.95fr 1.05fr;gap:40px;}}
+
+  .diagram{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;
+    padding:24px 22px 22px;box-shadow:var(--shadow);}
+  .dnode{position:relative;z-index:1;display:flex;align-items:center;gap:14px;padding:12px 6px;}
+  .dnode .ic{flex:none;width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+    background:var(--bg-soft);border:1px solid var(--line);color:var(--lime-deep);}
+  .dnode.engine .ic{background:var(--lime);border-color:var(--lime);color:var(--lime-deep);box-shadow:0 8px 20px -8px rgba(163,230,53,.7);}
+  .dnode .lab{font-size:14.5px;font-weight:600;}
+  .dnode .sub{font-size:12.5px;color:var(--muted);}
+  .dfoot{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);display:flex;gap:22px;}
+  .stat b{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;}
+  .stat span{display:block;font-size:11.5px;color:var(--muted);}
+
+  /* cta band */
+  .ctaband{position:relative;text-align:center;overflow:hidden;}
+  .ctaband .glow{top:-160px;left:50%;transform:translateX(-50%);width:600px;height:400px;}
+  .ctaband-inner{position:relative;z-index:1;max-width:560px;margin:0 auto;}
+  .ctaband h2{font-size:clamp(26px,3.6vw,36px);margin-bottom:14px;}
+  .ctaband p{color:var(--muted);font-size:16px;margin:0 0 28px;}
+  .contact-fine{font-family:'DM Mono',monospace;font-size:12.5px;color:var(--muted);margin-top:18px;}
+  .contact-fine a{text-decoration:none;color:var(--lime-deep);}
+
+  footer{border-top:1px solid var(--line);padding:30px 28px;}
+  .foot-inner{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;}
+  .foot-inner .c{font-size:13px;color:var(--muted);}
+  .foot-links{display:flex;gap:20px;font-size:13px;color:var(--muted);}
+  .foot-links a{text-decoration:none;}
+  .foot-links a:hover{color:var(--ink);}
 </style>
 </head>
 <body>
 
-<nav id="nav">
-  <a href="#" class="logo">
-    <span class="logo-mark">f<span>d</span></span>
-    Michal Sajko
-  </a>
-  <ul class="nav-links">
-    <li><a href="#o-mne">O mne</a></li>
-    <li><a href="#flowdesk">FlowDesk</a></li>
-    <li><a href="https://flow-desk.michalsajko.sk/case-study">Case study</a></li>
-  </ul>
-  <a class="nav-cta" href="https://calendly.com/michal-sajko-wqni/30min">Dohodnúť hovor</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="grid-bg"></div>
-  <div class="eyebrow">IT konzultant · Workflow Automation</div>
-  <h1>Procesy, ktoré <em>fungujú</em> bez vás.</h1>
-  <p class="hero-sub">Prepojím váš formulár, task manager a firemný chat do jedného automatizovaného systému. Jednorazovo, bez mesačných poplatkov.</p>
-  <div class="hero-actions">
-    <a class="btn-primary" href="https://calendly.com/michal-sajko-wqni/30min">Dohodnúť hovor zadarmo →</a>
-    <a class="btn-ghost" href="#flowdesk">Ako to funguje</a>
-  </div>
-  <div class="hero-note">30 min hovor zadarmo · nastavenie do 5 dní</div>
-  <div class="sectors">
-    <span>E-commerce</span><span>Fintech</span><span>Štátna správa</span><span>SaaS</span>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="section reveal" id="o-mne">
-  <div class="about">
-    <div class="about-text">
-      <div class="section-label">Kto som</div>
-      <h2 class="section-title">7+ rokov v digitálnych produktoch a procesnej automatizácii.</h2>
-      <p>IT projektový manažér so skúsenosťami z digitalizácie verejnej správy, e-commerce platforiem, software house a fintech aplikácií. Poznám procesy malých aj veľkých tímov — a viem, kde presne vznikajú straty času.</p>
-      <p>Dnes túto skúsenosť ponúkam malým firmám cez <strong>FlowDesk</strong> — jednorazovú implementáciu automatizácie, po ktorej systém funguje úplne samostatne, bez závislosti odo mňa.</p>
+  <header id="nav">
+    <div class="head-inner">
+      <a href="#" class="logo"><span class="mark">fd</span> Michal Sajko</a>
+      <nav>
+        <a href="#o-mne">O mne</a>
+        <a href="#flowdesk">FlowDesk</a>
+        <a href="https://flow-desk.michalsajko.sk/case-study">Case study</a>
+        <a href="https://calendly.com/michal-sajko-wqni/30min" class="btn btn-solid nav-cta">Dohodnúť hovor</a>
+      </nav>
     </div>
-    <div class="about-card">
-      <div class="about-status">Voľný termín</div>
-      <div class="about-name">Michal Sajko</div>
-      <div class="about-role">IT Project Manager & Workflow Automation</div>
-      <a class="about-link" href="https://www.linkedin.com/in/michal-sajko-624979176/">Viac info na LinkedIne →</a>
-    </div>
-  </div>
-</section>
+  </header>
 
-<!-- FLOWDESK TEASER -->
-<section class="flowdesk-section reveal" id="flowdesk">
-  <div class="section">
-    <div class="section-label">Moja služba</div>
-    <h2 class="section-title">FlowDesk — koniec chaosu v komunikácii tímu.</h2>
-    <div class="fd-wrap">
-      <div class="fd-copy">
-        <p>Prepojím váš formulár, task manager a chat do jedného automatizovaného systému. Každá požiadavka sa automaticky stane úlohou a tím o nej okamžite dostane notifikáciu — bez ručného kopírovania a bez strateného kontextu.</p>
-        <div class="fd-actions">
-          <a class="btn-primary" href="https://flow-desk.michalsajko.sk/">Pozrieť FlowDesk →</a>
-          <a class="fd-link-secondary" href="https://flow-desk.michalsajko.sk/case-study">Čítať case study</a>
+  <section class="hero">
+    <div class="glow glow-1"></div>
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>IT konzultant · Workflow Automation</span>
+        <h1 class="hero-h">Procesy, ktoré <span class="accent">fungujú</span> bez vás.</h1>
+        <p class="lede">Prepojím váš formulár, task manager a firemný chat do jedného automatizovaného systému. Jednorazovo, bez mesačných poplatkov.</p>
+        <div class="cta-row">
+          <a href="https://calendly.com/michal-sajko-wqni/30min" class="btn btn-solid">Dohodnúť hovor zadarmo →</a>
+          <a href="#flowdesk" class="btn btn-ghost">Ako to funguje</a>
+        </div>
+        <p class="fine">30 min hovor zadarmo · nastavenie do 5 dní</p>
+        <div class="sectors">
+          <span class="badge">E-commerce</span><span class="badge">Fintech</span><span class="badge">Štátna správa</span><span class="badge">SaaS</span>
         </div>
       </div>
-      <div class="browser-frame">
-        <div class="browser-bar">
-          <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+
+      <div class="flowcard">
+        <div class="flowcard-head">
+          <span class="t">Automatizovaný flow</span>
+          <span class="live"><span class="p"></span>Live</span>
         </div>
-        <img src="flowdeskhero.png" alt="FlowDesk — Formulár → Úloha → Notifikácia" />
+        <div class="flow">
+          <div class="track"></div>
+          <div class="frow">
+            <div class="fic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H9l-5 4V5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+            <div><div class="flabel">Formulár</div><div class="fsub">niekto nahlási požiadavku</div></div>
+          </div>
+          <div class="frow">
+            <div class="fic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="16" rx="1.4" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.4" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="13" width="7" height="7" rx="1.4" stroke="currentColor" stroke-width="1.6"/></svg></div>
+            <div><div class="flabel">Úloha</div><div class="fsub">automaticky vznikne ticket</div></div>
+          </div>
+          <div class="frow">
+            <div class="fic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 8a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+            <div><div class="flabel">Notifikácia</div><div class="fsub">tím dostane správu vo vlákne</div></div>
+          </div>
+        </div>
+        <div class="toolstrip">
+          <span class="tool">Google Forms</span><span class="tool">Trello</span><span class="tool">Jira</span>
+          <span class="tool">Slack</span><span class="tool">Google Chat</span><span class="tool">ClickUp</span><span class="tool">Excel</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <h2>Prvý hovor <em>zadarmo.</em></h2>
-  <p>30 minút, bez záväzkov. Zistíme, či a ako vám vieme pomôcť.</p>
-  <a class="btn-primary" href="https://calendly.com/michal-sajko-wqni/30min">Dohodnúť hovor zadarmo →</a>
-  <div class="cta-meta">Odpovedám do 24 hodín · michal.sajko@gmail.com · +421 914 703 355</div>
-</section>
+  <section id="o-mne">
+    <div class="split">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Kto som</span>
+        <h2 class="h2-sec">7+ rokov v digitálnych produktoch a procesnej automatizácii.</h2>
+        <p class="body-p">IT projektový manažér so skúsenosťami z digitalizácie verejnej správy, e-commerce platforiem, software house a fintech aplikácií. Poznám procesy malých aj veľkých tímov — a viem, kde presne vznikajú straty času.</p>
+        <p class="body-p">Dnes túto skúsenosť ponúkam malým firmám cez <b>FlowDesk</b> — jednorazovú implementáciu automatizácie, po ktorej systém funguje úplne samostatne, bez závislosti odo mňa.</p>
+      </div>
+      <div class="card">
+        <span class="avail"><span class="p"></span>Voľný termín</span>
+        <div class="avatar">MS</div>
+        <div class="name">Michal Sajko</div>
+        <div class="role">IT Project Manager &amp; Workflow Automation</div>
+        <a href="https://www.linkedin.com/in/michal-sajko-624979176/" class="li-link">Viac info na LinkedIne →</a>
+      </div>
+    </div>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <span>© 2026 Michal Sajko. Všetky práva vyhradené.</span>
-  <div class="footer-links">
-    <a href="https://flow-desk.michalsajko.sk/">Web FlowDesk ↗</a>
-    <a href="mailto:michal.sajko@gmail.com">Email</a>
-    <a href="tel:+421914703355">+421 914 703 355</a>
-    <a href="https://www.linkedin.com/in/michal-sajko-624979176/">LinkedIn</a>
-  </div>
-</footer>
+  <section id="flowdesk" class="service">
+    <div class="svc-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>Moja služba</span>
+        <h2 class="h2-sec">FlowDesk — koniec chaosu v komunikácii tímu.</h2>
+        <p class="body-p">Prepojím váš formulár, task manager a chat do jedného automatizovaného systému. Každá požiadavka sa automaticky stane úlohou a tím o nej okamžite dostane notifikáciu — bez ručného kopírovania a bez strateného kontextu.</p>
+        <div class="cta-row" style="margin-top:22px;">
+          <a href="https://flow-desk.michalsajko.sk/" class="btn btn-solid">Pozrieť FlowDesk →</a>
+          <a href="https://flow-desk.michalsajko.sk/case-study" class="btn btn-ghost">Čítať case study</a>
+        </div>
+      </div>
 
-<script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 30);
-  });
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => io.observe(el));
-</script>
+      <div class="diagram">
+        <div class="dnode">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H9l-5 4V5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <div><div class="lab">Formulár</div><div class="sub">klient odošle požiadavku</div></div>
+        </div>
+        <div class="dnode engine">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 3 4 14h6l-1 7 9-11h-6l1-7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
+          <div><div class="lab">FlowDesk</div><div class="sub">automaticky spracuje a rozdelí</div></div>
+        </div>
+        <div class="dnode">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="4" width="7" height="16" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="4" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg></div>
+          <div><div class="lab">Task manager</div><div class="sub">vznikne nová úloha</div></div>
+        </div>
+        <div class="dnode">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 8a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <div><div class="lab">Notifikácia tímu</div><div class="sub">tím vie okamžite, bez kopírovania</div></div>
+        </div>
+        <div class="dfoot">
+          <div class="stat"><b>0</b><span>manuálnych krokov</span></div>
+          <div class="stat"><b>&lt;1 min</b><span>od požiadavky po úlohu</span></div>
+          <div class="stat"><b>24/7</b><span>beží bez zásahu</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ctaband">
+    <div class="glow"></div>
+    <div class="ctaband-inner">
+      <h2>Prvý hovor <span class="accent">zadarmo.</span></h2>
+      <p>30 minút, bez záväzkov. Zistíme, či a ako vám vieme pomôcť.</p>
+      <a href="https://calendly.com/michal-sajko-wqni/30min" class="btn btn-solid">Dohodnúť hovor zadarmo →</a>
+      <p class="contact-fine">Odpovedám do 24 hodín · <a href="mailto:michal.sajko@gmail.com">michal.sajko@gmail.com</a> · <a href="tel:+421914703355">+421 914 703 355</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-inner">
+      <span class="c">© 2026 Michal Sajko. Všetky práva vyhradené.</span>
+      <div class="foot-links">
+        <a href="https://flow-desk.michalsajko.sk/">Web FlowDesk ↗</a>
+        <a href="mailto:michal.sajko@gmail.com">Email</a>
+        <a href="tel:+421914703355">+421 914 703 355</a>
+        <a href="https://www.linkedin.com/in/michal-sajko-624979176/">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
