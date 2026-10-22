@@ -90,7 +90,7 @@ export default function VideoShowcase({ calendlyUrl }: VideoShowcaseProps) {
   const poster = isDesktop ? '/videos/intro-poster.jpg' : '/videos/intro-poster-vertical.jpg';
 
   return (
-    <section ref={sectionRef} className="bg-white py-20 md:py-28">
+    <section ref={sectionRef} className="bg-white video-section" style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
       <div className="container">
         <div className="flex flex-col items-center text-center">
           <p className="section-kicker">Ukážka</p>
