@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { siClickup, siGooglechat, siGoogleforms, siJira, siTrello } from 'simple-icons/icons';
+import VideoShowcase from './components/VideoShowcase';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,6 +100,8 @@ function App() {
             <div className="hero-art"><div className="art-orbit" /><img className="hero-visual" src="/images/hero-flow.webp" alt="Prepojenie formulára, task listu a chatu" width="900" height="700" /></div>
           </div>
         </section>
+
+        <VideoShowcase calendlyUrl={calendly} />
 
         <section className="tools-strip" aria-label="Nástroje, ktoré prepájam"><div className="container"><p className="mono-label">Prepájam nástroje, ktoré už používate</p><div className="marquee-mask"><div className="marquee-track">{[...tools, ...tools].map((tool, index) => <div className="tool-item" key={`${tool.name}-${index}`}>{tool.icon ? <svg className="tool-icon" viewBox="0 0 24 24" aria-hidden="true"><path d={tool.icon.path} /></svg> : null}{tool.name}</div>)}</div></div></div></section>
 
