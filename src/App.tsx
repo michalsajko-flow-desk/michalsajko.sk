@@ -60,7 +60,9 @@ function App() {
       gsap.from('.hero-word', { yPercent: 110, opacity: 0, duration: 0.85, stagger: 0.07, ease: 'power3.out', delay: 0.15 });
       if (!prefersReducedMotion) {
         gsap.from('.hero-visual', { scale: 0.92, opacity: 0, duration: 1.1, ease: 'expo.out', delay: 0.5 });
-        gsap.to('.hero-visual', { yPercent: -18, rotation: 8, scale: 1.15, opacity: 0, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+        const heroTl = gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+        heroTl.to('.hero-visual-scroll', { yPercent: -15, rotation: 8, scale: 1.15, ease: 'none' }, 0)
+              .to('.hero-visual-scroll', { opacity: 0, ease: 'none' }, 0.7);
         gsap.to('.hero-copy', { yPercent: -6, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
         gsap.to('.art-orbit', { scale: 1.06, duration: 6, ease: 'sine.inOut', repeat: -1, yoyo: true, transformOrigin: 'center center' });
         gsap.to('.art-orbit', { yPercent: -28, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
@@ -126,7 +128,7 @@ function App() {
             </div>
             <div className="hero-art">
               <div className="art-orbit" />
-              <img className="hero-visual" src="/images/hero-flow.webp" alt="Prepojenie formulára, task listu a chatu" width="900" height="700" />
+              <div className="hero-visual-scroll"><img className="hero-visual" src="/images/hero-flow.webp" alt="Prepojenie formulára, task listu a chatu" width="900" height="700" /></div>
             </div>
             <div className="hero-dots" aria-hidden="true">
               {dots.map((d, i) => <span key={i} className="hero-dot" data-dx={d.dx} data-dy={d.dy} data-dur={d.dur} data-delay={d.delay} style={{ left: `${d.left}%`, top: `${d.top}%`, width: `${d.size}px`, height: `${d.size}px`, opacity: d.opacity } as React.CSSProperties} />)}
