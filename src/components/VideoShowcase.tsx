@@ -18,6 +18,28 @@ export default function VideoShowcase({ calendlyUrl }: VideoShowcaseProps) {
   const [reducedMotion, setReducedMotion] = useState(
     typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
   );
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const userPausedRef = useRef(false);
+
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      userPausedRef.current = false;
+      video.play()?.catch(() => {});
+    } else {
+      userPausedRef.current = true;
+      video.pause();
+    }
+  };
+
+  const toggleMute = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setIsMuted(video.muted);
+  };
 
   useEffect(() => {
     const widthMql = window.matchMedia('(min-width: 768px)');
@@ -50,9 +72,13 @@ export default function VideoShowcase({ calendlyUrl }: VideoShowcaseProps) {
       ScrollTrigger.create({
         trigger: section,
         start: 'top 75%',
-        onEnter: () => videoRef.current?.play()?.catch(() => {}),
+        onEnter: () => {
+          if (!userPausedRef.current) videoRef.current?.play()?.catch(() => {});
+        },
         onLeave: () => videoRef.current?.pause(),
-        onEnterBack: () => videoRef.current?.play()?.catch(() => {}),
+        onEnterBack: () => {
+          if (!userPausedRef.current) videoRef.current?.play()?.catch(() => {});
+        },
         onLeaveBack: () => videoRef.current?.pause(),
       });
     }, section);
@@ -94,20 +120,74 @@ export default function VideoShowcase({ calendlyUrl }: VideoShowcaseProps) {
               <span style={{ width: '11px', height: '11px', borderRadius: '50%', background: '#d8d4e4' }} />
               <span style={{ width: '11px', height: '11px', borderRadius: '50%', background: '#d8d4e4' }} />
             </div>
-            <video
-              ref={videoRef}
-              key={isDesktop ? 'desktop' : 'mobile'}
-              className="block w-full bg-black"
-              style={{ aspectRatio: isDesktop ? '16 / 9' : '9 / 16', objectFit: 'cover' }}
-              muted
-              loop
-              playsInline
-              preload="none"
-              poster={poster}
-              src={src}
-              controls={reducedMotion}
-              aria-label="Ukážka automatizácie: formulár, Trello a Slack"
-            />
+            <div className="relative">
+              <video
+                ref={videoRef}
+                key={isDesktop ? 'desktop' : 'mobile'}
+                className="block w-full bg-black"
+                style={{ aspectRatio: isDesktop ? '16 / 9' : '9 / 16', objectFit: 'cover', cursor: 'pointer' }}
+                muted
+                loop
+                playsInline
+                preload="none"
+                poster={poster}
+                src={src}
+                controls={reducedMotion}
+                aria-label="Ukážka automatizácie: formulár, Trello a Slack"
+                onClick={() => !reducedMotion && togglePlay()}
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+              />
+              {!reducedMotion && !isPlaying && (
+                <button
+                  type="button"
+                  onClick={togglePlay}
+                  aria-label="Prehrať"
+                  className="absolute inset-0 flex items-center justify-center"
+                  style={{ background: 'rgba(19,16,34,0.25)' }}
+                >
+                  <svg width="56" height="56" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              )}
+              {!reducedMotion && (
+                <button
+                  type="button"
+                  onClick={toggleMute}
+                  aria-label={isMuted ? 'Zapnúť zvuk' : 'Vypnúť zvuk'}
+                  className="absolute"
+                  style={{
+                    bottom: '12px',
+                    right: '12px',
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    border: 'none',
+                    background: 'rgba(255,255,255,0.82)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    transition: 'background .25s ease',
+                  }}
+                >
+                  {isMuted ? (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6355e0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                      <line x1="22" y1="9" x2="16" y2="15" />
+                      <line x1="16" y1="9" x2="22" y2="15" />
+                    </svg>
+                  ) : (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6355e0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                      <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                      <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                    </svg>
+                  )}
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
