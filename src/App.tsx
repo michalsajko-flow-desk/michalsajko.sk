@@ -9,6 +9,20 @@ import VideoShowcase from './components/VideoShowcase';
 gsap.registerPlugin(ScrollTrigger);
 
 const calendly = 'https://calendly.com/michal-sajko-wqni/30min';
+const dots = [
+  { left: 8, top: 18, size: 8, opacity: 0.5, dx: 30, dy: -20, dur: 14, delay: 0 },
+  { left: 22, top: 70, size: 5, opacity: 0.35, dx: -25, dy: 15, dur: 18, delay: 2 },
+  { left: 45, top: 12, size: 10, opacity: 0.4, dx: 20, dy: 30, dur: 16, delay: 1 },
+  { left: 55, top: 82, size: 6, opacity: 0.45, dx: -30, dy: -25, dur: 20, delay: 3 },
+  { left: 72, top: 25, size: 7, opacity: 0.3, dx: 35, dy: 20, dur: 15, delay: 0.5 },
+  { left: 88, top: 55, size: 9, opacity: 0.4, dx: -20, dy: 35, dur: 17, delay: 2.5 },
+  { left: 15, top: 45, size: 4, opacity: 0.25, dx: 25, dy: -30, dur: 19, delay: 1.5 },
+  { left: 38, top: 55, size: 6, opacity: 0.35, dx: -35, dy: 10, dur: 13, delay: 4 },
+  { left: 65, top: 65, size: 5, opacity: 0.3, dx: 20, dy: -15, dur: 21, delay: 3.5 },
+  { left: 82, top: 15, size: 7, opacity: 0.35, dx: -25, dy: 25, dur: 16, delay: 1 },
+  { left: 30, top: 30, size: 4, opacity: 0.2, dx: 15, dy: 20, dur: 22, delay: 2 },
+  { left: 50, top: 40, size: 8, opacity: 0.3, dx: -20, dy: -10, dur: 18, delay: 0.8 },
+];
 const tools = [
   { name: 'Google Forms', icon: siGoogleforms },
   { name: 'Trello', icon: siTrello },
@@ -44,8 +58,21 @@ function App() {
 
     const ctx = gsap.context(() => {
       gsap.from('.hero-word', { yPercent: 110, opacity: 0, duration: 0.85, stagger: 0.07, ease: 'power3.out', delay: 0.15 });
-      gsap.from('.hero-visual', { scale: 0.92, opacity: 0, duration: 1.1, ease: 'expo.out', delay: 0.25 });
-      gsap.to('.hero-visual', { y: -14, duration: 2.6, ease: 'sine.inOut', repeat: -1, yoyo: true });
+      if (!prefersReducedMotion) {
+        gsap.from('.hero-visual', { scale: 0.92, opacity: 0, duration: 1.1, ease: 'expo.out', delay: 0.5 });
+        gsap.to('.hero-visual', { yPercent: -18, rotation: 8, scale: 1.15, opacity: 0, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+        gsap.to('.hero-copy', { yPercent: -6, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+        gsap.to('.art-orbit', { scale: 1.06, duration: 6, ease: 'sine.inOut', repeat: -1, yoyo: true, transformOrigin: 'center center' });
+        gsap.to('.art-orbit', { yPercent: -28, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+        gsap.utils.toArray<HTMLElement>('.hero-dot').forEach((dot, i) => {
+          const dx = parseFloat(dot.dataset.dx || '0');
+          const dy = parseFloat(dot.dataset.dy || '0');
+          const dur = parseFloat(dot.dataset.dur || '15');
+          const delay = parseFloat(dot.dataset.delay || '0');
+          gsap.to(dot, { y: dy, x: dx, duration: dur, ease: 'sine.inOut', repeat: -1, yoyo: true, delay });
+          gsap.to(dot, { yPercent: -40 - i * 4, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+        });
+      }
       gsap.utils.toArray<HTMLElement>('.reveal').forEach((item) => {
         gsap.from(item, { y: 36, opacity: 0, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: item, start: 'top 84%' } });
       });
@@ -97,7 +124,13 @@ function App() {
               <div className="hero-actions"><a className="button" href={calendly}>Dohodnúť hovor zadarmo <ArrowUpRight size={17} /></a><a className="text-link" href="#sluzby">Ako to funguje <ArrowDownRight size={17} /></a></div>
               <p className="microcopy">30 min hovor zadarmo <span /> nastavenie do 5 dní</p>
             </div>
-            <div className="hero-art"><div className="art-orbit" /><img className="hero-visual" src="/images/hero-flow.webp" alt="Prepojenie formulára, task listu a chatu" width="900" height="700" /></div>
+            <div className="hero-art">
+              <div className="art-orbit" />
+              <img className="hero-visual" src="/images/hero-flow.webp" alt="Prepojenie formulára, task listu a chatu" width="900" height="700" />
+            </div>
+            <div className="hero-dots" aria-hidden="true">
+              {dots.map((d, i) => <span key={i} className="hero-dot" data-dx={d.dx} data-dy={d.dy} data-dur={d.dur} data-delay={d.delay} style={{ left: `${d.left}%`, top: `${d.top}%`, width: `${d.size}px`, height: `${d.size}px`, opacity: d.opacity } as React.CSSProperties} />)}
+            </div>
           </div>
         </section>
 
